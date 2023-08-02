@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Single+Day&display=swap');
+#mostWhole {
+  width: 100%;
+}
+
+.apex {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.whole1st2nd {
+  margin-top: 27px;
+}
+
+.firstLib {
+  color: #000;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: 'Inter', sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 37px;
+}
+
+.firstLibbody {
+  border-top: 3px solid lightgray;
+  --swiper-theme-color: rgba(178, 178, 178, 0.35);
+}
+
+.libBanks {
+  margin-top: 100px;
+  width: 462px !important;
+  height: 295px !important;
+
+  border-radius: 10px;
+  border: 3px solid rgba(85, 85, 85, 0.15);
+}
+
+.bankNick {
+  display: flex;
+}
+
+.eachBank {
+  color: #000;
+  font-family: 'Inter' sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+
+  margin-top: 18px;
+  margin-left: 28px;
+  line-height: normal;
+}
+
+.eachNick {
+  color: #6d6d6d;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+
+  margin-top: 18px;
+  margin-left: 10px;
+  line-height: 40px;
+}
+
+.eachBankImg {
+  margin-left: 28px;
+}
+
+.imgTypeAcc {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.typeAmount {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  margin-left: 39px;
+}
