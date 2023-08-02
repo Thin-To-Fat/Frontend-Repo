@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import RegistTtfSaving from './pages/saving/RegistTtfSaving';
 import TestPage from './pages/accountBook/TestPage';
 import LoginPage from './pages/accountBook/LoginPage';
+import TransactionPage from './pages/transaction/Transaction';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Route index element={<TestPage />} />
       </Route>
       <Route path="/transaction">
-        <Route index element={<TestPage />} />  
+        <Route index element={<TransactionPage />} />  
       </Route>
       <Route path="/library">
         <Route index element={<TestPage />} />

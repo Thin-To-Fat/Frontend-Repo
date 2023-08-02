@@ -1,0 +1,185 @@
+p {
+    margin: 0;
+}
+#TXContent {
+    font-size: 24px;
+}
+.transactioncontent{
+    width: 100%;
+}
+#TXTopwrap{
+    height: auto;
+    width: 100%;
+    margin-bottom: 74px;
+}
+#TXBottomwrap{
+    width: 50%;
+    height: 3000px;
+    border:1px solid black;
+} 
+.TXdateselectwrap {
+    border-bottom: 3px solid #E6E6E6;
+    height: 51px;
+    margin-bottom: 45px;
+}
+.TXdatedropdwon {
+    border: none;
+    font-weight: 900;
+    font-size: 24px;
+
+}
+.TXTopcontentwrap {
+    display: flex;
+    height: 389px;
+    flex-wrap: nowrap;
+    gap: 57px;
+
+}
+.TXTopleftcontent {
+    width: 1109px;
+    height: 389px;
+    border: 3px solid #E6E6E6;
+    border-radius: 10px;
+    display: flex;
+    padding-left: 40px;
+}
+.TXTopleftcontentfilter{
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+  
+}
+.TXTopleftcontentgraph {
+    width: 80%;
+    display: flex;
+
+
+}
+.TXToprightcontent {
+    width: 431px;
+    height: 389px;
+    border: 3px solid #E6E6E6;
+    border-radius: 10px;
+}
+.TXmaxout {
+    margin: 34px 44px 40px 33px;
+    font-size: 30px;
+    font-weight: 800;
+}
+.TXmaxout > p {
+    margin: 0;
+    margin-bottom: 20px;
+    
+}
+.TXmaxoutnum {
+    color: #0046FF;
+    font-weight: 600;
+
+}
+.TXdayavgoutnum {
+    color: #0046FF;
+    font-weight: 600;
+}
+.TXdayavgout {
+    margin: 34px 44px 40px 33px;  
+    font-size: 30px;
+    font-weight: 800;
+}
+.TXdayavgout > p {
+    margin: 0;
+    margin-bottom: 20px;
+}
+.TXhistoryhead {
+    width: 100%;
+    height: 73px;
+    border-bottom: 3px solid #E6E6E6;
+
+
+}
+.TXhistorydatesum {
+    display: flex;
+    height: 73px;
+    align-items: center;
+    border-bottom: 3px solid #E6E6E6;
+    padding-left: 30px;
+    font-size: 28px;
+    font-weight: 800;
+}
+.TXhistoryData {
+    display: flex;
+    height: 73px;
+    align-items: center;
+    border-bottom: 3px solid #E6E6E6;
+    padding-left: 80px;
+}
+.TXhistorydate{
+    width: 1500px;
+    
+}
+.TXhistorysum{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.TXhistorysum > div {
+    text-align: center;
+}
+.TXData1{
+    width: 226px;
+    text-align: center;
+    color: #6D6D6D;
+}
+.TXData2{
+    width: 400px;
+    color: #6D6D6D;
+}
+.TXData3{
+    width: 475px;
+    color: #6D6D6D;
+}
+.TXData4{
+    width: 100px;
+    color: #EF5F5F;
+}
+.TXouttoggle {
+    border: 3px solid #E6E6E6;
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    margin-right: 10px;
+    display: flex;
+}
+.TXintoggle {
+    border: 3px solid #E6E6E6;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+.TXouttogglebox {
+    display: flex;
+    margin-bottom: 36px;
+    align-items: center;
+
+}
+
+.TXintogglebox {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.TXouttext {
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+.TXoutval {
+    font-size: 28px;
+    font-weight: 700;
+}
+.TXinval {
+    font-size: 28px;
+    font-weight: 700;
+}
