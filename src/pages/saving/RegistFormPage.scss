@@ -1,0 +1,144 @@
+#ttfRegistForm{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.userAccountSelect{
+    width: 300px;
+    height: 40px;;
+  
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 800;
+    color: #444;
+    background-color: #fff;
+  
+    padding: 0.5em 0.8em 0.5em 0.5em;
+    margin: 0;
+    
+  
+    border: 1px solid #aaa;
+    border-radius: 0.5em;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    margin-right: 205px;
+
+  }
+  .userCycleDaySetting, .userCycleSetting{
+    width: 100px;
+    height: 40px;;
+  
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 800;
+    color: #444;
+    background-color: #fff;
+  
+    padding: 0.5em 0.8em 0.5em 0.5em;
+    margin: 0;
+    ;
+  
+    border: 1px solid #aaa;
+    border-radius: 0.5em;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    margin-right: 5px;
+
+  }
+  #savingMoneyTemplate{
+    border: 1px solid #aaa;
+    border-radius: 0.5em;
+    width: 200px;
+    height: 40px;;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 10px;
+
+    input{
+        border: none;
+        width: 80px;
+        height: 18px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 800;
+        text-align: end;
+        
+        color:#aaa;
+    }
+    > div{
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 800;
+        margin-left: 5px;
+    }
+  }
+  #savingMoneyContent{
+    color:#aaa;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: flex-end;
+
+    >div{
+        font-size: 1px;
+        height: 14px;
+    }
+  }
+
+  .ttfInfoContent{
+    display: flex;
+  }
+
+  .ttfInfoElement{
+    margin-bottom: 50px;
+
+  
+  .ttfInfoName{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 21px;
+
+    margin-bottom: 17px;
+    color: #0046FF;
+    border-bottom: 1px solid #B8B8B8;
+    padding: 10px 20px 10px 10px 
+  }
+}
+
+  .ttfInfoContentM{
+    padding-left: 20px;
+    width: 50%;
+    display:flex;
+    justify-content: space-between;
+  }
+  #registButtonArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button{
+        width: 100px;
+        height: 40px;
+        background-color: #0046FF;
+        border: none;
+        color: #FFFFFF;
+        margin-left: 10px;
+        font-size: 17px;
+    }
+  }
+
+  #ttfRegistForm > #ttfInfotitle{
+    margin-top: 10px;
+    margin-bottom:40px
+  }
+
+.ttfInfoContentEnd{
+    padding-left: 20px;
+    width: 40%;
+    display:flex;
+    justify-content: space-between;
+
+  }

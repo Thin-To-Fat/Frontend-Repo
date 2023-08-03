@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+
 import './Template.scss';
 import { useNavigate, useLocation  } from 'react-router-dom';
 import styled from "styled-components";
@@ -35,7 +35,7 @@ const Template = ({ children }) => {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 550;
-    font-size: 17px;
+    font-size: 19px;
     line-height: 29px;
     color: #FFFFFF;
 

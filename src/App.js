@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import RegistTtfSaving from './pages/saving/RegistTtfSaving';
 import TestPage from './pages/accountBook/TestPage';
 import LoginPage from './pages/accountBook/LoginPage';
+import RegistFormPage from './pages/saving/RegistFormPage';
+import RegistCompletePage from './pages/saving/RegistCompletePage';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <Route path="/saving">
         <Route index element={<TestPage />} />
         <Route path="ttfregist" element={<RegistTtfSaving />} />
+        <Route path="writeform" element={<RegistFormPage />} />
+        <Route path="registcomplete" element={<RegistCompletePage />} />
       </Route>
     </Routes>
   );
