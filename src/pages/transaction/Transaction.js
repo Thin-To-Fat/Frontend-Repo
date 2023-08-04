@@ -91,33 +91,42 @@ const [data, setData] = useState({
         setMonthIn(addComma(res.result[0].monthIncome))
         setDayAvgIn(addComma(res.result[0].dayChangeAvg))
     });
-      fetch(fetchaddr2, {
-        method : "GET",
-        headers: {
-          'X-AUTH-TOKEN': tokenstr,
-        }  
+    fetch(fetchaddr2, {
+      method : "GET",
+      headers: {
+        'X-AUTH-TOKEN': tokenstr,
+      }  
     }).then(res => res.json())
     .then(res => {
       // 라벨 업데이트
       const newLabels = Array.from({ length: res.result.dayChange.length }, (_, i) => (i + 1).toString()+"일");
       setLabels(newLabels)
       // 데이터 업데이트
-      setData(prevData => ({
-        ...prevData,
-        labels: newLabels,
-        datasets: prevData.datasets.map(dataset => {
+      setData(prevData => {
+        const newDatasets = prevData.datasets.map(dataset => {
           if (dataset.label === '지출' && isToggled) {
             return {
               ...dataset,
-              data: res.result.dayChange
-            }
+              data: res.result.dayChange // '지출' 데이터
+            };
           } else if (dataset.label === '수입' && isToggled2) {
-            return dataset;
+            return {
+              ...dataset,
+              data: res.result.dayIncome // '수입' 데이터. 실제로는 '수입'에 해당하는 데이터를 사용해야 합니다.
+            };
           } else {
-            return null;
+            return {
+              ...dataset,
+              data: []
+            };
           }
-        }).filter(Boolean),
-      }));
+        });
+        return {
+          ...prevData,
+          labels: newLabels,
+          datasets: newDatasets,
+        };
+      });
     })
   }, [isToggled, isToggled2]);
 
