@@ -1,11 +1,32 @@
 import Template from '../../component/Template';
 import './Library.scss';
+import { useEffect, useState } from 'react';
+import axios from '../../../node_modules/axios/index';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 function LibraryJM() {
+  const [stanbank, setStanbank] = useState([]);
+
+  useEffect(() => {
+    console.log(localStorage.getItem('X-AUTH-TOKEN'));
+    axios
+      .post('/api/v1/library/totalacc', {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('X-AUTH-TOKEN')}`,
+          // 'X-AUTH-TOKEN': localStorage.getItem('X-AUTH-TOKEN'),
+        },
+      })
+      .then((response) => {
+        // localStorage.setItem('X-AUTH-PATH', JSON.stringify(response.data.result));
+        // localStorage.setItem('X-AUTH-TOKEN', response.data.result);
+        // navigate('/dashboard');
+        setStanbank('X-AUTH-TOKEN', response.data.result);
+      });
+  }, []);
+
   return (
     <Template>
       <div className="bodyContent" id="mostWhole">
