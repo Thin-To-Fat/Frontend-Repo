@@ -1,0 +1,13 @@
+.dEPfixedPrice{
+  width: 307px;
+  height: 48px;
+  margin-top: 15px;
+  margin-left: 53px;
+  font-size: 48px;
+  font-weight: bold;
+}
+.dEPfixedPrice > img {
+  width: 44px;
+  height: 39px;
+  margin-right: 17px;
+}
