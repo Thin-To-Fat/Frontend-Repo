@@ -23,7 +23,7 @@ function LibraryJM() {
         // console.log(response.data.result);
       });
   }, []);
-
+  console.log(stanbank);
   return (
     <Template>
       <div className="bodyContent" id="mostWhole">
@@ -32,7 +32,6 @@ function LibraryJM() {
           <div className="wholeFirst">
             <div className="firstLib">입출금계좌</div>
             <div className="firstLibbody">
-              {/* 입출금계좌길이체크 시작 */}
               <div>
                 <Swiper
                   className="secondSwiperb"
@@ -40,22 +39,41 @@ function LibraryJM() {
                   slidesPerView={3}
                   navigation={true}
                 >
-                  <SwiperSlide className="libBanks">
-                    <div className="bankNick">
-                      <div className="eachBank">카카오뱅크(7985)</div>
-                      <div className="eachNick">김민수의 통장</div>
-                    </div>
+                  {/* 입출금 맵 시작 */}
 
-                    <div className="imgTypeAcc">
-                      <div className="eachBankImg">
-                        <img src="https://thin-to-fat.s3.ap-northeast-2.amazonaws.com/bankInfo/kakao.png" />
-                      </div>
-                      <div className="typeAmount">
-                        <div>타입: 계좌</div>
-                        <div>잔액: 3,800,000원</div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                  {stanbank.map((a, i) => {
+                    if (stanbank[i].accCk === 0 || stanbank[i].accCk === 2) {
+                      return (
+                        <SwiperSlide
+                          className="libBanks"
+                          key={stanbank[i].accountId}
+                        >
+                          <div className="bankNick">
+                            <div className="eachBank">{stanbank[i].name}</div>
+                            <div className="eachNick">
+                              {stanbank[i].nickname}
+                            </div>
+                          </div>
+                          <div className="imgTypeAcc">
+                            <div className="eachBankImg">
+                              <img src={stanbank[i].imgUrl} />
+                            </div>
+                            <div className="typeAmount">
+                              <div>타입: {stanbank[i].type}</div>
+                              <div>
+                                잔액:{' '}
+                                {stanbank[i].balance.toLocaleString('ko-KR')}원
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      );
+                    } else {
+                      return null;
+                    }
+                  })}
+
+                  {/* 입출금 맵 종료 */}
                 </Swiper>
               </div>
             </div>
@@ -71,22 +89,39 @@ function LibraryJM() {
                   slidesPerView={3}
                   navigation={true}
                 >
-                  <SwiperSlide className="libBanks">
-                    <div className="bankNick">
-                      <div className="eachBank">카카오뱅크(7458)</div>
-                      <div className="eachNick">카카오뱅크 자유적금</div>
-                    </div>
-
-                    <div className="imgTypeAcc">
-                      <div className="eachBankImg">
-                        <img src="https://thin-to-fat.s3.ap-northeast-2.amazonaws.com/bankInfo/kakao.png" />
-                      </div>
-                      <div className="typeAmount">
-                        <div>타입: 적금</div>
-                        <div>잔액: 800,000원</div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                  {/* 적금 맵 시작 */}
+                  {stanbank.map((a, i) => {
+                    if (stanbank[i].accCk === 1) {
+                      return (
+                        <SwiperSlide
+                          className="libBanks"
+                          key={stanbank[i].accountId}
+                        >
+                          <div className="bankNick">
+                            <div className="eachBank">{stanbank[i].name}</div>
+                            <div className="eachNick">
+                              {stanbank[i].nickname}
+                            </div>
+                          </div>
+                          <div className="imgTypeAcc">
+                            <div className="eachBankImg">
+                              <img src={stanbank[i].imgUrl} />
+                            </div>
+                            <div className="typeAmount">
+                              <div>타입: {stanbank[i].type}</div>
+                              <div>
+                                잔액:{' '}
+                                {stanbank[i].balance.toLocaleString('ko-KR')}원
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      );
+                    } else {
+                      return null;
+                    }
+                  })}
+                  {/* 적금 맵 종료 */}
                 </Swiper>
               </div>
             </div>
