@@ -9,6 +9,16 @@ import 'swiper/css/navigation';
 //시작
 function LibraryJM() {
   const [stanbank, setStanbank] = useState([]);
+  const [seeinput, setSeeinput] = useState(false);
+  //실험
+
+  const [inputText, setInputText] = useState('');
+
+  const handleInputChange = (event) => {
+    setInputText(event.target.value);
+  };
+
+  //실험끝
 
   useEffect(() => {
     axios
@@ -23,7 +33,7 @@ function LibraryJM() {
         // console.log(response.data.result);
       });
   }, []);
-  console.log(stanbank);
+
   return (
     <Template>
       <div className="bodyContent" id="mostWhole">
@@ -50,9 +60,62 @@ function LibraryJM() {
                         >
                           <div className="bankNick">
                             <div className="eachBank">{stanbank[i].name}</div>
-                            <div className="eachNick">
-                              {stanbank[i].nickname}
-                            </div>
+                            {/* 버튼변경시작 */}
+                            {seeinput === true ? (
+                              <div>
+                                <input
+                                  type="text"
+                                  value={inputText}
+                                  onChange={handleInputChange}
+                                />
+                                <button
+                                  onClick={() => {
+                                    axios
+                                      .put(
+                                        '/api/v1/library/nickname',
+                                        {
+                                          headers: {
+                                            'Content-Type': 'application/json',
+                                            'X-AUTH-TOKEN':
+                                              localStorage.getItem(
+                                                'X-AUTH-TOKEN',
+                                              ),
+                                          },
+                                        },
+                                        {
+                                          name: inputText,
+                                          accountPK: stanbank[i].accountId,
+                                        },
+                                      )
+                                      .catch((error) => {
+                                        console.log(error);
+                                        console.log(inputText);
+                                        console.log(stanbank[i].accountId);
+                                      })
+                                      .then((response) => {
+                                        alert('변경성공');
+                                      });
+                                  }}
+                                >
+                                  확인
+                                </button>
+                              </div>
+                            ) : (
+                              <div className="eachNick">
+                                {stanbank[i].nickname}
+                              </div>
+                            )}
+
+                            <button
+                              className="changeBtn"
+                              onClick={() => {
+                                setSeeinput(!seeinput);
+                              }}
+                            >
+                              {' '}
+                              변경
+                            </button>
+                            {/* 버튼변경종료 */}
                           </div>
                           <div className="imgTypeAcc">
                             <div className="eachBankImg">
@@ -60,6 +123,15 @@ function LibraryJM() {
                             </div>
                             <div className="typeAmount">
                               <div>타입: {stanbank[i].type}</div>
+                              {stanbank[i].accCk === 2 ? (
+                                <div>
+                                  이번달 사용금액 :{' '}
+                                  {stanbank[i].monthBalance.toLocaleString(
+                                    'ko-KR',
+                                  )}
+                                  원
+                                </div>
+                              ) : null}
                               <div>
                                 잔액:{' '}
                                 {stanbank[i].balance.toLocaleString('ko-KR')}원
