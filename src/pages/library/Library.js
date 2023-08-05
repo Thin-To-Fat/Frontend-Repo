@@ -1,22 +1,23 @@
 import Template from '../../component/Template';
 import './Library.scss';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from '../../../node_modules/axios/index';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+//스와이퍼
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
+//모달창 불러오기
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
 //시작
 function LibraryJM() {
   const [stanbank, setStanbank] = useState([]);
-  const [seeinput, setSeeinput] = useState(false);
+  const [modalShow, setModalShow] = React.useState(false);
+  const [banno, setBanno] = useState(0);
+
   //실험
-
-  const [inputText, setInputText] = useState('');
-
-  const handleInputChange = (event) => {
-    setInputText(event.target.value);
-  };
 
   //실험끝
 
@@ -60,61 +61,33 @@ function LibraryJM() {
                         >
                           <div className="bankNick">
                             <div className="eachBank">{stanbank[i].name}</div>
+                            <div className="eachNick">
+                              {stanbank[i].nickname}
+                            </div>
                             {/* 버튼변경시작 */}
-                            {seeinput === true ? (
-                              <div>
-                                <input
-                                  type="text"
-                                  value={inputText}
-                                  onChange={handleInputChange}
-                                />
-                                <button
-                                  onClick={() => {
-                                    axios
-                                      .put(
-                                        '/api/v1/library/nickname',
-                                        {
-                                          headers: {
-                                            'Content-Type': 'application/json',
-                                            'X-AUTH-TOKEN':
-                                              localStorage.getItem(
-                                                'X-AUTH-TOKEN',
-                                              ),
-                                          },
-                                        },
-                                        {
-                                          name: inputText,
-                                          accountPK: stanbank[i].accountId,
-                                        },
-                                      )
-                                      .catch((error) => {
-                                        console.log(error);
-                                        console.log(inputText);
-                                        console.log(stanbank[i].accountId);
-                                      })
-                                      .then((response) => {
-                                        alert('변경성공');
-                                      });
-                                  }}
-                                >
-                                  확인
-                                </button>
-                              </div>
-                            ) : (
-                              <div className="eachNick">
-                                {stanbank[i].nickname}
-                              </div>
-                            )}
 
-                            <button
+                            <Button
                               className="changeBtn"
+                              variant="primary"
                               onClick={() => {
-                                setSeeinput(!seeinput);
+                                setModalShow(true);
+                                setBanno(stanbank[i].accountId);
+                                console.log(stanbank[i].accountId);
                               }}
                             >
-                              {' '}
-                              변경
-                            </button>
+                              닉네임 변경
+                            </Button>
+
+                            <MyVerticallyCenteredModal
+                              className="wholeModal"
+                              show={modalShow}
+                              onHide={() => {
+                                setModalShow(false);
+                                window.location.reload();
+                              }}
+                              stanbank={stanbank}
+                              banno={banno}
+                            />
                             {/* 버튼변경종료 */}
                           </div>
                           <div className="imgTypeAcc">
@@ -174,6 +147,32 @@ function LibraryJM() {
                             <div className="eachNick">
                               {stanbank[i].nickname}
                             </div>
+
+                            {/* 버튼변경시작 */}
+
+                            <Button
+                              className="changeBtn"
+                              variant="primary"
+                              onClick={() => {
+                                setModalShow(true);
+                                setBanno(stanbank[i].accountId);
+                                console.log(stanbank[i].accountId);
+                              }}
+                            >
+                              닉네임 변경
+                            </Button>
+
+                            <MyVerticallyCenteredModal
+                              className="wholeModal"
+                              show={modalShow}
+                              onHide={() => {
+                                setModalShow(false);
+                                window.location.reload();
+                              }}
+                              stanbank={stanbank}
+                              banno={banno}
+                            />
+                            {/* 버튼변경종료 */}
                           </div>
                           <div className="imgTypeAcc">
                             <div className="eachBankImg">
@@ -201,6 +200,78 @@ function LibraryJM() {
         </div>
       </div>
     </Template>
+  );
+}
+
+//여기서부터 컴포넌트
+function MyVerticallyCenteredModal(props) {
+  const [inputText, setInputText] = useState('');
+  const [eachData, setEachData] = useState({
+    name: '',
+    accountPK: '',
+  });
+
+  const handleInputChange = (event) => {
+    setInputText(event.target.value);
+    setEachData({
+      ...eachData,
+      name: event.target.value,
+      accountPK: props.stanbank[props.banno - 1].accountId,
+    });
+  };
+
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          원하는 닉네임으로 변경해주세요
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>
+          <input
+            type="text"
+            value={inputText}
+            placeholder="10자 미만으로 작성해주세요"
+            style={{ width: '700px', height: '50px' }}
+            onChange={handleInputChange}
+          />
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button
+          onClick={() => {
+            // console.log(props.banno);
+            // console.log(props.stanbank[props.banno - 1].accountId);
+            // console.log(props.stanbank[props.banno - 1].nickname);
+
+            axios
+              .put('/api/v1/library/nickname', eachData, {
+                headers: {
+                  'Content-Type': 'application/json',
+                  'X-AUTH-TOKEN': localStorage.getItem('X-AUTH-TOKEN'),
+                },
+              })
+              .catch((error) => {
+                console.log(error);
+                console.log('에러임당');
+              })
+              .then((response) => {
+                alert('닉네임이 성공적으로 등록되었습니다.');
+              });
+            window.location.reload();
+          }}
+        >
+          변경하기
+        </Button>
+        <Button onClick={props.onHide}>닫기</Button>
+      </Modal.Footer>
+    </Modal>
   );
 }
 

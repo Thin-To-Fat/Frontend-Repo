@@ -66,11 +66,11 @@
 .eachNick {
   color: #6d6d6d;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
 
-  margin-top: 18px;
+  margin-top: 15px;
   margin-left: 10px;
   line-height: 40px;
 }
@@ -97,18 +97,29 @@
 }
 
 .changeBtn {
-  color: white;
-  background: #597eff;
-  // padding: 0.3px 0.3px;
-  border: 1px solid #597eff;
-  border-radius: 10px;
-  font-size: 14px;
-  line-height: 14px;
-  height: 24px;
-  font-style: normal;
-  font-weight: 400;
-  font-family: 'Inter', sans-serif;
+  // color: white;
+  // background: #597eff;
+  padding: 1px 10px !important;
+  // border: 1px solid #597eff;
+  border-radius: 10px !important;
+  // font-size: 14px;
+  line-height: 30px !important;
+  height: 30px !important;
+  // font-style: normal;
+  // font-weight: 400 !important;
+  font-family: 'Inter', sans-serif !important;
 
-  margin-top: 25px;
+  margin-top: 20px !important;
   margin-left: 10px;
+}
+
+//여기서부터 모달
+.wholeModal {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(1.5px) !important;
+  // background-color: rgba(0, 0, 0, 0.4);
+}
+
+#contained-modal-title-vcenter {
+  font-family: 'Inter', sans-serif !important;
 }
