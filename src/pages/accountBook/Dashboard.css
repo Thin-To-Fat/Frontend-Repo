@@ -2,11 +2,11 @@
 
 }
 .dTop{
-     width: 1590px;
-    height: 417px;
-    border: 3px solid #e6e6e6;
-    border-radius: 10px;
-    margin: 0 auto;
+  width: 1590px;
+  height: 417px;
+  border: 3px solid #e6e6e6;
+  border-radius: 10px;
+  margin: 0 auto;
 }
 .dTopTitle{
   font-size: 22px;
@@ -21,30 +21,30 @@
     margin: 0 auto;
     margin-top: 29px;
     gap: 96px;
-}
-.dInfo{
-  width: 793px;
-  height: 273px;
-  display: flex;
-  gap: 75px;
-}
-.dPimg{
-  width: 283px;
+  }
+  .dInfo{
+    width: 793px;
     height: 273px;
-}
-.dPname{
-  list-style: none;
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 61px;
+    display: flex;
+    gap: 75px;
+  }
+  .dPimg{
+    width: 283px;
+    height: 273px;
+  }
+  .dPname{
+    list-style: none;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 61px;
 }
 .dPname > li{
-
+  
 }
 .dExpectPrice{
   width: 416px;
-    height: 114px;
-    margin-top: 30px;
+  height: 114px;
+  margin-top: 30px;
 }
 .dEPtitle{
   border-bottom: 1px solid black;
@@ -66,12 +66,24 @@
   height: 527px;
   border: 3px solid #e6e6e6;
   border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
 }
 .dCPtitle{
+  width: 200px;
   font-size: 22px;
   font-weight: bold;
   margin-top: 25px;
   margin-left: 24px;
+}
+.chart-container{
+  width: 388px;
+  height: 388px;
+  margin-left: 100px;
+  margin-top: 36px;
+  margin-right: 0px !important;
 }
 .dDailyPrice{
   width: 576px;

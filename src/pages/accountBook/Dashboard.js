@@ -18,12 +18,13 @@ import axios from 'axios';
 import FixedPrice from '../../component/FixedPrice';
 import ExpendRank from '../../component/ExpendRank';
 import MontlyIssue from '../../component/MonthlyIssue';
-// import faker from 'faker';
+import CategoryBox from '../../component/CategoryBox';
+
 Chart.register(ArcElement, CategoryScale, LinearScale,PointElement,LineElement,Title,Tooltip,Legend);
 
 function Dashboard() {
   const [userinfo, setUserinfo] = useState({});
-  // const [fixed, setFixed] = useState();
+
   useEffect(()=> {
     axios.get("/api/v1/users/dashboard",{
       headers: {
@@ -37,19 +38,7 @@ function Dashboard() {
       }
     });
   },[]);
-  // useEffect(()=> {
-  //   axios.get("/api/v1/users/dashboard/fixed",{
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),
-  //     },
-  //   }).then((response)=>{
-  //     if(response.data){
-  //       console.log(response.data);
-  //       setFixed(response.data.result);
-  //     }
-  //   });
-  // },[]);
+
   const categodata = {
     labels: ['생활/마트', '식사', '문화/예술', '술/유흥', '카페/디저트', '의료/건강', '뷰티/미용'],
       datasets: [
@@ -159,10 +148,11 @@ function Dashboard() {
             </div>
             <div className='dContentTop'>
               <div className='dCategoPrice'>
-                <div className='dCPtitle'>분류별 지출(월)</div>
-                <div style={{width: '388px', height: '388px', marginLeft: '100px', marginTop: '36px'}}>
+                <div className='dCPtitle'>분류별 지출(월)</div>             
+                <div className='chart-container'>
                   <Doughnut data={categodata} options={cdoptions} />
                 </div>
+                <CategoryBox/>
               </div>
               <div className='dDailyPrice'>
                 <div className='dDPtitle'>현재 하루 지출</div>
