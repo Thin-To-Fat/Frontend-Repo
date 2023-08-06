@@ -187,6 +187,7 @@ function LibraryJM() {
         show={modalShow}
         onHide={() => {
           setModalShow(false);
+          setChText('');
           // window.location.reload();
           // setBanno(0);
         }}
@@ -247,6 +248,7 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Footer>
         <Button
           className="mobtn1"
+          variant="info"
           onClick={() => {
             // console.log(props.banno);
             // console.log(props.stanbank[props.banno - 1].accountId);
