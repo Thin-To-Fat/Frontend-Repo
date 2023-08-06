@@ -8,8 +8,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 //모달창 불러오기
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 //시작
 function LibraryJM() {
@@ -18,7 +18,7 @@ function LibraryJM() {
   const [banno, setBanno] = useState(0);
 
   //실험
-
+  const [chText, setChText] = useState('');
   //실험끝
 
   useEffect(() => {
@@ -60,7 +60,9 @@ function LibraryJM() {
                           key={stanbank[i].accountId}
                         >
                           <div className="bankNick">
-                            <div className="eachBank">{stanbank[i].name}</div>
+                            <div className="eachBank">
+                              {stanbank[i].name}({stanbank[i].accNum})
+                            </div>
                             <div className="eachNick">
                               {stanbank[i].nickname}
                             </div>
@@ -68,7 +70,7 @@ function LibraryJM() {
 
                             <Button
                               className="changeBtn"
-                              variant="primary"
+                              variant="outline-primary"
                               onClick={() => {
                                 setModalShow(true);
                                 setBanno(stanbank[i].accountId);
@@ -78,16 +80,6 @@ function LibraryJM() {
                               닉네임 변경
                             </Button>
 
-                            <MyVerticallyCenteredModal
-                              className="wholeModal"
-                              show={modalShow}
-                              onHide={() => {
-                                setModalShow(false);
-                                window.location.reload();
-                              }}
-                              stanbank={stanbank}
-                              banno={banno}
-                            />
                             {/* 버튼변경종료 */}
                           </div>
                           <div className="imgTypeAcc">
@@ -143,7 +135,9 @@ function LibraryJM() {
                           key={stanbank[i].accountId}
                         >
                           <div className="bankNick">
-                            <div className="eachBank">{stanbank[i].name}</div>
+                            <div className="eachBank">
+                              {stanbank[i].name}({stanbank[i].accNum})
+                            </div>
                             <div className="eachNick">
                               {stanbank[i].nickname}
                             </div>
@@ -152,7 +146,7 @@ function LibraryJM() {
 
                             <Button
                               className="changeBtn"
-                              variant="primary"
+                              variant="outline-primary"
                               onClick={() => {
                                 setModalShow(true);
                                 setBanno(stanbank[i].accountId);
@@ -162,16 +156,6 @@ function LibraryJM() {
                               닉네임 변경
                             </Button>
 
-                            <MyVerticallyCenteredModal
-                              className="wholeModal"
-                              show={modalShow}
-                              onHide={() => {
-                                setModalShow(false);
-                                window.location.reload();
-                              }}
-                              stanbank={stanbank}
-                              banno={banno}
-                            />
                             {/* 버튼변경종료 */}
                           </div>
                           <div className="imgTypeAcc">
@@ -199,29 +183,46 @@ function LibraryJM() {
           </div>
         </div>
       </div>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => {
+          setModalShow(false);
+          // window.location.reload();
+          // setBanno(0);
+        }}
+        stanbank={stanbank}
+        banno={banno}
+        chText={chText}
+        setChText={setChText}
+      />
     </Template>
   );
 }
 
 //여기서부터 컴포넌트
 function MyVerticallyCenteredModal(props) {
-  const [inputText, setInputText] = useState('');
+  // const [inputText, setInputText] = useState('');
   const [eachData, setEachData] = useState({
     name: '',
     accountPK: '',
   });
 
   const handleInputChange = (event) => {
-    setInputText(event.target.value);
-    setEachData({
-      ...eachData,
-      name: event.target.value,
-      accountPK: props.stanbank[props.banno - 1].accountId,
-    });
+    if (event.target.value.length > 10) {
+      alert('10자 미만으로 작성해주세요');
+    } else {
+      props.setChText(event.target.value);
+      setEachData({
+        ...eachData,
+        name: event.target.value,
+        accountPK: props.stanbank[props.banno - 1].accountId,
+      });
+    }
   };
 
   return (
     <Modal
+      // className="wholeModal"
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
@@ -236,7 +237,7 @@ function MyVerticallyCenteredModal(props) {
         <p>
           <input
             type="text"
-            value={inputText}
+            value={props.chText}
             placeholder="10자 미만으로 작성해주세요"
             style={{ width: '700px', height: '50px' }}
             onChange={handleInputChange}
@@ -245,31 +246,38 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button
+          className="mobtn1"
           onClick={() => {
             // console.log(props.banno);
             // console.log(props.stanbank[props.banno - 1].accountId);
             // console.log(props.stanbank[props.banno - 1].nickname);
 
-            axios
-              .put('/api/v1/library/nickname', eachData, {
-                headers: {
-                  'Content-Type': 'application/json',
-                  'X-AUTH-TOKEN': localStorage.getItem('X-AUTH-TOKEN'),
-                },
-              })
-              .catch((error) => {
-                console.log(error);
-                console.log('에러임당');
-              })
-              .then((response) => {
-                alert('닉네임이 성공적으로 등록되었습니다.');
-              });
-            window.location.reload();
+            if (eachData.name === '') {
+              alert('닉네임을 입력해주세요');
+            } else {
+              axios
+                .put('/api/v1/library/nickname', eachData, {
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'X-AUTH-TOKEN': localStorage.getItem('X-AUTH-TOKEN'),
+                  },
+                })
+                .catch((error) => {
+                  console.log(error);
+                  console.log('에러임당');
+                })
+                .then((response) => {
+                  alert('닉네임이 성공적으로 등록되었습니다.');
+                });
+              window.location.reload();
+            }
           }}
         >
           변경하기
         </Button>
-        <Button onClick={props.onHide}>닫기</Button>
+        <Button className="mobtn2" variant="secondary" onClick={props.onHide}>
+          닫기
+        </Button>
       </Modal.Footer>
     </Modal>
   );
