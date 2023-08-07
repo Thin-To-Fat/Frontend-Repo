@@ -66,6 +66,7 @@ function LibraryJM() {
                             <div className="eachNick">
                               {stanbank[i].nickname}
                             </div>
+
                             {/* 버튼변경시작 */}
 
                             <Button
@@ -82,6 +83,7 @@ function LibraryJM() {
 
                             {/* 버튼변경종료 */}
                           </div>
+
                           <div className="imgTypeAcc">
                             <div className="eachBankImg">
                               <img src={stanbank[i].imgUrl} />
@@ -209,8 +211,8 @@ function MyVerticallyCenteredModal(props) {
   });
 
   const handleInputChange = (event) => {
-    if (event.target.value.length > 10) {
-      alert('10자 미만으로 작성해주세요');
+    if (event.target.value.length > 8) {
+      alert('8자 미만으로 작성해주세요');
     } else {
       props.setChText(event.target.value);
       setEachData({
@@ -239,7 +241,7 @@ function MyVerticallyCenteredModal(props) {
           <input
             type="text"
             value={props.chText}
-            placeholder="10자 미만으로 작성해주세요"
+            placeholder="8자 미만으로 작성해주세요"
             style={{ width: '700px', height: '50px' }}
             onChange={handleInputChange}
           />
@@ -263,10 +265,6 @@ function MyVerticallyCenteredModal(props) {
                     'Content-Type': 'application/json',
                     'X-AUTH-TOKEN': localStorage.getItem('X-AUTH-TOKEN'),
                   },
-                })
-                .catch((error) => {
-                  console.log(error);
-                  console.log('에러임당');
                 })
                 .then((response) => {
                   alert('닉네임이 성공적으로 등록되었습니다.');

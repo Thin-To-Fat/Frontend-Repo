@@ -70,7 +70,7 @@
   font-style: normal;
   font-weight: 400;
 
-  margin-top: 15px;
+  margin-top: 17px;
   margin-left: 10px;
   line-height: 40px;
 }
@@ -97,20 +97,15 @@
 }
 
 .changeBtn {
-  // color: white;
-  // background: #597eff;
   padding: 1px 10px !important;
-  // border: 1px solid #597eff;
   border-radius: 10px !important;
-  // font-size: 14px;
   line-height: 30px !important;
   height: 30px !important;
-  // font-style: normal;
-  // font-weight: 400 !important;
   font-family: 'Inter', sans-serif !important;
 
   margin-top: 20px !important;
-  margin-left: 10px;
+  margin-left: auto;
+  margin-right: 2%;
 }
 
 .modalBackground {
@@ -136,4 +131,8 @@
 
 .mobtn2:hover {
   background-color: black !important;
+}
+
+.swiper-wrapper {
+  justify-content: flex-start !important;
 }
