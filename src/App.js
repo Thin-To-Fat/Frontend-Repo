@@ -4,10 +4,12 @@ import TestPage from './pages/accountBook/TestPage';
 import LoginPage from './pages/accountBook/LoginPage';
 import RegistFormPage from './pages/saving/RegistFormPage';
 import RegistCompletePage from './pages/saving/RegistCompletePage';
+import TTFScriptPage from './pages/saving/TTFScriptPage';
 
 function App() {
   return (
     <Routes>
+      <Route path="" element={<LoginPage/>}/>
       <Route path="/login" element={<LoginPage/>}/>
       {/* 차례대로 대시보드, 입출금내역, 라이브러리 */}
       <Route path="/dashboard">
@@ -21,6 +23,7 @@ function App() {
       </Route>
       <Route path="/saving">
         <Route index element={<TestPage />} />
+        <Route path="scriptttf" element={< TTFScriptPage/>} />
         <Route path="ttfregist" element={<RegistTtfSaving />} />
         <Route path="writeform" element={<RegistFormPage />} />
         <Route path="registcomplete" element={<RegistCompletePage />} />
