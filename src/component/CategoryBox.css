@@ -1,6 +1,6 @@
+
 .dCategoryBox{
-  margin-top: 48px;
-  margin-left: 81px;
+  margin-left: 60px;
 }
 .dCategory{
   width: 400px;
@@ -28,4 +28,6 @@
   line-height: 65px;
   font-size: 20px;
   color: #6d6d6d;
+  width: 91px;
+  text-align: right;
 }
