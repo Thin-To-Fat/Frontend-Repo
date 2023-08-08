@@ -242,7 +242,7 @@ function MyVerticallyCenteredModal(props) {
             type="text"
             value={props.chText}
             placeholder="8자 미만으로 작성해주세요"
-            style={{ width: '700px', height: '50px' }}
+            style={{ width: '765px', height: '50px' }}
             onChange={handleInputChange}
           />
         </p>
@@ -256,7 +256,7 @@ function MyVerticallyCenteredModal(props) {
             // console.log(props.stanbank[props.banno - 1].accountId);
             // console.log(props.stanbank[props.banno - 1].nickname);
 
-            if (eachData.name === '') {
+            if (eachData.name === '' || eachData.name.trim() === '') {
               alert('닉네임을 입력해주세요');
             } else {
               axios
