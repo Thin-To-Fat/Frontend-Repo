@@ -4,6 +4,15 @@ import { useNavigate } from "../../../node_modules/react-router-dom/dist/index";
 import React, { useState, useRef, useEffect } from "react";
 import axios from "../../../node_modules/axios/index";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
+SwiperCore.use([Navigation, Pagination, Autoplay]);
+
 const SavingsListPage = () => {
   const navigate = useNavigate();
   const [showDiv, setShowDiv] = useState([]);
@@ -167,15 +176,49 @@ const SavingsListPage = () => {
         ) : null}
         <div className="savingsPageHeader">
           <div className="headerEvent">
-            <div>EVENT</div>
+            <div className="Event">EVENT</div>
             <div className="headerMore">더보기</div>
           </div>
-          <img
-            src={process.env.PUBLIC_URL + "/images/ttfbanner.png"}
-            alt=""
-            id="ttfbanner"
-            onClick={() => navigate("/saving/ttfscripttf")}
-          />
+          <Swiper
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop={true}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log("slide change")}
+            spaceBetween={83}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+          >
+            <SwiperSlide>
+              <img
+                src={process.env.PUBLIC_URL + "/images/ttfbanner.png"}
+                alt=""
+                id="ttfbanner"
+                onClick={() => navigate("/saving/ttfscripttf")}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src={process.env.PUBLIC_URL + "/images/banner1.png"}
+                alt=""
+                id="ttfbanner"
+                onClick={() => {
+                  window.open("https://incomeplus.tistory.com/959");
+                }}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src={process.env.PUBLIC_URL + "/images/banner2.png"}
+                alt=""
+                id="ttfbanner"
+                onClick={() => {
+                  window.open(
+                    "https://m.shinhan.com/rib/mnew/index.jsp#220011111001",
+                  );
+                }}
+              />
+            </SwiperSlide>
+          </Swiper>
         </div>
 
         <div className="findSavingsWrap">
@@ -235,7 +278,15 @@ const SavingsListPage = () => {
                     <div className="savingsDetailInfoHeader">
                       <p>상품정보</p>
 
-                      <a href={k.link}> 자세히 보기 </a>
+                      <a
+                        onClick={() => {
+                          window.open(k.link);
+                        }}
+                      >
+                        {" "}
+                        자세히 보기{" "}
+                      </a>
+                      {/* <a href={k.link}> 자세히 보기 </a> */}
                     </div>
                     <div className="savingsDetailInfoBody">
                       <img

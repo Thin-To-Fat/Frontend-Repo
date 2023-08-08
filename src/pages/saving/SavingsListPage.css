@@ -1,10 +1,8 @@
 #SavingsPage {
   width: 100%;
   height: 100%;
-  /* height: 800px; */
+  height: 800px;
   padding-left: 50px;
-  /* overflow-y: auto; */
-  /* overflow: auto; */
 }
 
 .savingsPageHeader {
@@ -14,28 +12,27 @@
   margin: 0 0 50px 100px;
 }
 
-.savingsPageHeader > img {
-  width: 900px;
-  height: 275px;
-}
-
 .headerEvent {
   display: flex;
-  gap: 750px;
+  align-items: center;
+  gap: 764px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
-  line-height: 29px;
   height: 45px;
 }
 
 .headerMore {
   text-decoration: underline;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 20px;
+  line-height: 29px;
 }
 
 #ttfbanner {
+  width: 900px;
+  height: 275px;
   cursor: pointer;
 }
 
@@ -300,6 +297,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 
   background-color: rgba(0, 0, 0, 0.2);
   top: 0;
@@ -381,4 +379,19 @@ button {
   right: 10px;
   top: -20px;
   cursor: pointer;
+}
+
+.savingsPageHeader .swiper-slide {
+  width: 900px !important;
+}
+.savingsPageHeader .swiper-wrapper {
+  width: 900px;
+}
+
+.savingsPageHeader .swiper {
+  margin-left: 0;
+}
+.savingsPageHeader .swiper-button-next::after,
+.savingsPageHeader .swiper-button-prev::after {
+  display: none;
 }
