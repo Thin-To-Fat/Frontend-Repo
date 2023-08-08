@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 //모달창 불러오기
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+// import "../../../public/images/loginImg.jpg"
 
 //시작
 function LibraryJM() {
@@ -47,7 +48,7 @@ function LibraryJM() {
                 <Swiper
                   className="secondSwiperb"
                   spaceBetween={83}
-                  slidesPerView={4}
+                  slidesPerView={3.5}
                   navigation={true}
                 >
                   {/* 입출금 맵 시작 */}
@@ -75,7 +76,7 @@ function LibraryJM() {
                               onClick={() => {
                                 setModalShow(true);
                                 setBanno(stanbank[i].accountId);
-                                console.log(stanbank[i].accountId);
+                                // alert('잠시후 모달창이 돌아갑니다');
                               }}
                             >
                               닉네임 변경
@@ -125,7 +126,7 @@ function LibraryJM() {
                 <Swiper
                   className="firstSwiperb"
                   spaceBetween={83}
-                  slidesPerView={4}
+                  slidesPerView={3.5}
                   navigation={true}
                 >
                   {/* 적금 맵 시작 */}
@@ -152,7 +153,7 @@ function LibraryJM() {
                               onClick={() => {
                                 setModalShow(true);
                                 setBanno(stanbank[i].accountId);
-                                console.log(stanbank[i].accountId);
+                                // alert('잠시후 모달창이 돌아갑니다.');
                               }}
                             >
                               닉네임 변경
@@ -225,7 +226,7 @@ function MyVerticallyCenteredModal(props) {
 
   return (
     <Modal
-      // className="wholeModal"
+      className="wholeModal"
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
@@ -250,7 +251,7 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Footer>
         <Button
           className="mobtn1"
-          variant="info"
+          variant="primary"
           onClick={() => {
             // console.log(props.banno);
             // console.log(props.stanbank[props.banno - 1].accountId);
