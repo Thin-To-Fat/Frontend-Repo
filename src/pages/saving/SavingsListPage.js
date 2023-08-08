@@ -25,6 +25,11 @@ const SavingsListPage = () => {
   const [bankInfo, setBankInfo] = useState([]);
 
   const modalRef = useRef();
+  const handleOutsideClick = (event) => {
+    if (modalRef && !modalRef.current.contains(event.target)) {
+      setModalOpen(false);
+    }
+  };
 
   const detailOpen = (e) => {
     if (showDiv.includes(e)) {
@@ -35,7 +40,7 @@ const SavingsListPage = () => {
   };
 
   const openModal = () => {
-    setModalOpen(!isModalOpen);
+    setModalOpen(true);
 
     axios
       .get(`/api/v1/savings/bankInfo`, {
@@ -45,12 +50,6 @@ const SavingsListPage = () => {
         const result = Object.values(res.data.result);
         setBankList([...result]);
       });
-  };
-
-  const handleOutsideClick = (event) => {
-    if (modalRef && !modalRef.current.contains(event.target)) {
-      setModalOpen(false);
-    }
   };
 
   const [selectButton, setSelectButton] = useState(true);
@@ -108,6 +107,7 @@ const SavingsListPage = () => {
               <div className="SavingModalContent">
                 <div className="BankModalWrap">
                   제 1금융권
+                  <span onClick={() => setBankInfo([])}>초기화</span>
                   <div className="BankModalBody">
                     {bankList.map((v) => {
                       return (
