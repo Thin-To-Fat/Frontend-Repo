@@ -6,7 +6,7 @@ import axios from "../../../node_modules/axios/index";
 
 const SavingsListPage = () => {
   const navigate = useNavigate();
-  const [showDiv, setShowDiv] = useState("");
+  const [showDiv, setShowDiv] = useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
   const [savingsList, setsavingsList] = useState([]);
   const [bankList, setBankList] = useState([]);
@@ -19,9 +19,9 @@ const SavingsListPage = () => {
 
   const detailOpen = (e) => {
     if (showDiv.includes(e)) {
-      setShowDiv(bankInfo.filter((item) => item !== e));
+      setShowDiv(showDiv.filter((item) => item !== e));
     } else {
-      setShowDiv(bankInfo.concat(e));
+      setShowDiv(showDiv.concat(e));
     }
   };
 
@@ -29,14 +29,12 @@ const SavingsListPage = () => {
     setModalOpen(!isModalOpen);
 
     axios
-      .get(`/api/v1/savings/bankList`, {
+      .get(`/api/v1/savings/bankInfo`, {
         withCredentials: true,
       })
       .then((res) => {
         const result = Object.values(res.data.result);
         setBankList([...result]);
-        console.log("은행리스트 호출");
-        console.log(res);
       });
   };
 
@@ -70,7 +68,6 @@ const SavingsListPage = () => {
       .then((res) => {
         const result = Object.values(res.data.result);
         setsavingsList([...result]);
-        console.log(res);
       });
   };
 
@@ -91,8 +88,6 @@ const SavingsListPage = () => {
 
   useEffect(() => {
     list();
-    console.log("bankInfo값");
-    console.log(bankInfo);
   }, [selectButton, isModalOpen]);
 
   return (
@@ -165,7 +160,7 @@ const SavingsListPage = () => {
               <div></div>
               <div></div>
               <div className="SavingModalClose">
-                <span onClick={() => openModal()}>&times;</span>
+                <span onClick={() => setModalOpen(false)}>&times;</span>
               </div>
             </div>
           </div>
@@ -220,27 +215,27 @@ const SavingsListPage = () => {
           </div>
         </div>
 
-        {savingsList.map((v) => {
+        {savingsList.map((k) => {
           return (
-            <div className="savingsListWrap" key={v.savingsId}>
+            <div className="savingsListWrap" key={k.savingsId}>
               <div className="savingsInfo">
-                <img src={v.imgUrl}></img>
+                <img src={k.imgUrl}></img>
                 <div className="savingsNames">
-                  <p>{v.bName}</p>
-                  <div>{v.sName}</div>
+                  <p>{k.bName}</p>
+                  <div>{k.sName}</div>
                 </div>
                 <div className="savingsRates">
-                  <p>{v.maxRate} %</p>
-                  <div>{v.basicRate} %</div>
+                  <p>{k.maxRate} %</p>
+                  <div>{k.basicRate} %</div>
                 </div>
               </div>
-              {showDiv == v.savingsId ? (
+              {showDiv.includes(k.savingsId) ? (
                 <div className="savingsDetailInfoWrap">
                   <div className="savingsDetailInfo">
                     <div className="savingsDetailInfoHeader">
                       <p>상품정보</p>
 
-                      <a href={v.link}> 자세히 보기 </a>
+                      <a href={k.link}> 자세히 보기 </a>
                     </div>
                     <div className="savingsDetailInfoBody">
                       <img
@@ -248,14 +243,14 @@ const SavingsListPage = () => {
                       ></img>
                       <div className="savingsDetailContent">
                         <p>가입 금액</p>
-                        <span>최소 {v.joinMoney}원 이상</span>
+                        <span>최소 {k.joinMoney}원 이상</span>
                       </div>
                       <img
                         src={process.env.PUBLIC_URL + "/images/user 1.png"}
                       ></img>
                       <div className="savingsDetailContent">
                         <p>가입 대상</p>
-                        <span>{v.joinWho}</span>
+                        <span>{k.joinWho}</span>
                       </div>
 
                       <img
@@ -266,13 +261,13 @@ const SavingsListPage = () => {
                       ></img>
                       <div className="savingsDetailContent">
                         <p>가입방법</p>
-                        <span>{v.saveHow}</span>
+                        <span>{k.saveHow}</span>
                       </div>
                     </div>
                   </div>
                   <button
                     className="savingsDetailInfoHideBtn"
-                    onClick={() => detailOpen(v.savingsId)}
+                    onClick={() => detailOpen(k.savingsId)}
                   >
                     <div>접기</div>
                     <img
@@ -284,7 +279,7 @@ const SavingsListPage = () => {
               ) : (
                 <button
                   className="savingsDetailInfoBtn"
-                  onClick={() => detailOpen(v.savingsId)}
+                  onClick={() => detailOpen(k.savingsId)}
                 >
                   <div>더보기</div>
                   <img
