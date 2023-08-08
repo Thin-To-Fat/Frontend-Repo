@@ -1,0 +1,392 @@
+#SavingsPage {
+  width: 100%;
+  height: 100%;
+  padding-left: 50px;
+  /* overflow-y: auto; */
+}
+
+.savingsPageHeader {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  height: auto;
+  margin: 0 0 50px 100px;
+}
+
+.savingsPageHeader > img {
+  width: 900px;
+  height: 275px;
+}
+
+.headerEvent {
+  display: flex;
+  gap: 750px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  height: 45px;
+}
+
+.headerMore {
+  text-decoration: underline;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#ttfbanner {
+  /* border-top: 1px solid #000; */
+  /* height: 300px;
+  width: 100%; */
+}
+
+.findSavingsWrap {
+  width: 1000px;
+  margin-left: 50px;
+}
+
+.findSavingsHeader {
+  height: 28px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 6px;
+}
+
+.findSavingsBody {
+  display: flex;
+  height: 80px;
+}
+
+.findSavingsBody > input {
+  width: 100%;
+  height: 60px;
+  border: 3px solid #000;
+  font-size: 24px;
+  padding-left: 10px;
+}
+.findSavingsBody > button {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.findSavingsBody > button > img {
+  width: 60px;
+  height: 60px;
+}
+.findSavingsBody > div {
+  width: 1px;
+  height: 60px;
+  border: 1px solid #000;
+}
+
+.findSavingsFooter {
+  display: flex;
+  flex-direction: row-reverse;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 36px;
+  color: rgba(0, 0, 0, 0.34);
+}
+.findSavingsFooter > button {
+  cursor: pointer;
+}
+
+.savingsListWrap {
+  width: 77%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 0px 20px 10px 50px; */
+  margin-left: 100px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.savingsInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 10px 0;
+  height: 100px;
+  width: 100%;
+  /* width: auto; */
+}
+.savingsInfo > img {
+  height: 70px;
+  width: 70px;
+}
+
+.savingsNames {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80px;
+  width: 400px;
+
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-right: 100px;
+}
+.savingsNames > p {
+  font-weight: 700;
+  margin: 0;
+}
+.savingsRates {
+  width: 250px;
+
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.savingsRates > p {
+  color: #ffc800;
+  font-family: Inter;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+.savingsRates > div {
+  color: #b5b5b5;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+button {
+  all: unset;
+}
+
+.savingsDetailInfoBtn {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.savingsDetailInfoBtn > div {
+  margin: 10px 0 10px 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.savingsDetailInfoBtn > img {
+  width: 20px;
+  height: 15px;
+}
+
+.savingsDetailInfoWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.savingsDetailInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 950px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 3px solid rgba(85, 85, 85, 0.15);
+  background: rgba(255, 255, 255, 0);
+}
+
+.savingsDetailInfoHeader {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+  margin: 1px;
+  gap: 550px;
+}
+.savingsDetailInfoHeader > p {
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.savingsDetailInfoHeader > a {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.savingsDetailInfoBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 900px;
+  /* margin-right: 140px; */
+}
+
+.savingsDetailInfoBody > div {
+  width: 200px;
+  /* margin-right: 50px; */
+}
+
+.savingsDetailContent {
+  display: flex;
+  flex-direction: column;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  gap: 5px;
+}
+
+.savingsDetailContent > p {
+  color: #6d6d6d;
+  margin: 0;
+}
+
+.savingsDetailContent > span {
+  color: #000;
+}
+.savingsDetailInfoBody > img {
+  width: 60px;
+  height: 60px;
+}
+
+.savingsDetailInfoHideBtn {
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.savingsDetailInfoHideBtn > div {
+  margin: 10px 0 10px 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.savingsDetailInfoHideBtn > img {
+  width: 20px;
+  height: 15px;
+}
+
+#arrowUp {
+  transform: rotate(180deg);
+}
+
+.SavingModal {
+  position: absolute;
+  /* z-index: 1; */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.SavingModalContentWrap {
+  width: 700px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 52.5%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.SavingModalContent {
+  height: 350px;
+  overflow-y: auto;
+  padding-top: 130px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.BankModalWrap {
+  /* display: flex;
+  flex-direction: column; */
+  width: 560px;
+  height: 100%;
+
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin: 200px 0 20px 0;
+}
+
+.BankModalBody {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin: 20px 0 20px 0;
+  gap: 15px;
+}
+
+.BankModalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+
+  width: 100px;
+  height: 70px;
+  /* background-color: rgb(245, 245, 245); */
+  border-radius: 25px;
+}
+.BankModalContent > img {
+  width: 40px;
+  height: 40px;
+}
+
+.SavingModalClose {
+  position: absolute;
+  font-size: 70px;
+  right: 10px;
+  top: -20px;
+  cursor: pointer;
+}
