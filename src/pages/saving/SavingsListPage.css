@@ -2,7 +2,7 @@
   width: 100%;
   height: 100%;
   height: 800px;
-  padding-left: 50px;
+  padding-left: 75px;
 }
 
 .savingsPageHeader {
@@ -15,8 +15,8 @@
 .headerEvent {
   display: flex;
   align-items: center;
-  gap: 764px;
-  font-family: "Inter";
+  gap: 1064px;
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -31,19 +31,19 @@
 }
 
 #ttfbanner {
-  width: 900px;
-  height: 275px;
+  width: 1200px;
+  height: 350px;
   cursor: pointer;
 }
 
 .findSavingsWrap {
   width: 1000px;
-  margin-left: 50px;
+  margin-left: 200px;
 }
 
 .findSavingsHeader {
   height: 28px;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 26px;
@@ -83,7 +83,7 @@
 .findSavingsFooter {
   display: flex;
   flex-direction: row-reverse;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
   font-size: 25px;
@@ -99,7 +99,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 105px;
   border-bottom: 1px solid #dcdcdc;
 }
 
@@ -128,7 +128,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-right: 100px;
+  margin-right: 400px;
 }
 .savingsNames > p {
   font-weight: 700;
@@ -389,10 +389,10 @@ button {
 }
 
 .savingsPageHeader .swiper-slide {
-  width: 900px !important;
+  width: 1200px !important;
 }
 .savingsPageHeader .swiper-wrapper {
-  width: 900px;
+  width: 1200px;
 }
 
 .savingsPageHeader .swiper {
