@@ -19,7 +19,7 @@ function ExpendPer() {
   const [chartData, setChartData] = useState(null);
   const [userinfo, setUserinfo] = useState({});
   const fetchChartData = () => {
-    axios.get("/api/v1/history/dashboard/top3", {
+    axios.get("http://localhost:7070/api/v1/history/dashboard/top3", {
       headers: {
         'Content-Type': 'application/json',
         'X-AUTH-TOKEN': localStorage.getItem("X-AUTH-TOKEN"),

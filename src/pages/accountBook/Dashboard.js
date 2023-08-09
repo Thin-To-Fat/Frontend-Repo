@@ -13,28 +13,72 @@ import DailyPriceChart from '../../component/DailyPriceChart';
 
 function Dashboard() {
   const [userinfo, setUserinfo] = useState({});
-
+  const [incomeModalCheck, setIncomeModalCheck] = useState(false);
+  const [incomeValue, setIncomeValue] = useState();
+  const [budgetModalCheck, setBudgetModalCheck] = useState(false);
+  const [budgetValue, setBudgetValue] = useState();
+  
+  
   useEffect(()=> {
-    axios.get("/api/v1/users/dashboard",{
+    axios.get("http://localhost:7070/api/v1/users/dashboard",{
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
         'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),
       },
     }).then((response)=>{
       if(response.data){
         console.log(response.data);
         setUserinfo(response.data.result);
+        setIncomeValue(response.data.result.income)
       }
     });
   },[]);
 
-  useEffect(() => {
-    console.log(userinfo)
-  }, [userinfo])
-
+  const changeIncome = (e) =>{
+    setIncomeValue(e.target.value)
+  }
+  const updateIncome = ()=>{
+    axios.put("http://localhost:7070/api/v1/users/dashboard/income",{income:incomeValue},{
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),
+      },
+    }).then((response)=>{
+      alert("성공")
+      setIncomeModalCheck(!incomeModalCheck)
+    });
+  }
+  const changeBudget = (e) =>{
+    setBudgetValue(e.target.value)
+  }
+  const updateBudget = ()=>{
+    axios.put("http://localhost:7070/api/v1/users/dashboard/goalBudget",{goalBudget:budgetValue},{
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),
+      },
+    }).then((response)=>{
+      alert("성공")
+      setBudgetModalCheck(!budgetModalCheck)
+    });
+  }
   return (
     <Template>
         <div className="bodyContent" id="DashboardContent">
+          { incomeModalCheck? 
+            <div className='incomeModal'>
+              <div className='incomeModalContent'>
+              <input type='text' value={incomeValue} onChange={changeIncome}/>
+              <button type='button' onClick={updateIncome}>수정하기</button>
+            </div>
+            </div>:null}
+          { budgetModalCheck? 
+            <div className='budgetModal'>
+              <div className='budgetModalContent'>
+              <input type='text' value={budgetValue} onChange={changeBudget}/>
+              <button type='button' onClick={updateBudget}>수정하기</button>
+            </div>
+            </div>:null}
             <div className='dTop'>
               <div className='dTopTitle'>프로필</div>
               <div className='dProfile'>
@@ -43,8 +87,14 @@ function Dashboard() {
                     <img src={process.env.PUBLIC_URL + '/images/Mask group.png'}></img>
                   </div>
                   <ul className='dPname'>{userinfo.name} 님
-                    <li>&gt; 월 예산 : {(userinfo.income/10000).toLocaleString('ko-KR')}만원</li>
-                    <li>&gt; 월 목표 금액 : {(userinfo.goalBudget/10000).toLocaleString('ko-KR')}만원</li>
+                    <li>
+                      &gt; 월 예산 : {(userinfo.income/10000).toLocaleString('ko-KR')}만원&nbsp;
+                      <img className='pencil' src={process.env.PUBLIC_URL + '/images/pencil.png'} onClick={()=>{setIncomeModalCheck(!incomeModalCheck)}}></img>
+                    </li>
+                    <li>
+                      &gt; 월 목표 금액 : {(userinfo.goalBudget/10000).toLocaleString('ko-KR')}만원&nbsp;
+                      <img className='pencil' src={process.env.PUBLIC_URL + '/images/pencil.png'} onClick={()=>{setBudgetModalCheck(!budgetModalCheck)}}></img>
+                    </li>
                   </ul>
                 </div>
                 <div className='dExpectPrice'>

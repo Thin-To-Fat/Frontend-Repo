@@ -20,11 +20,11 @@ function LoginPage() {
     console.log(userData)
     axios.post( "/api/v1/users/login" , userData, {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
       },
     }).then((response) => {
       // localStorage.setItem('X-AUTH-PATH', JSON.stringify(response.data.result));
-      localStorage.setItem('X-AUTH-TOKEN', response.data.result);
+      localStorage.setItem('X-AUTH-TOKEN', response.data.result.token);
       navigate("/dashboard")
     }).catch(()=>{
       alert("로그인에 실패했습니다.")

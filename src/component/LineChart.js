@@ -23,7 +23,7 @@ function LineChart(){
     let empMonth = [];
     let empExpend = [];
 
-    axios.get("/api/v1/history/dashboard/months",{
+    axios.get("http://localhost:7070/api/v1/history/dashboard/months",{
       headers: {
         'Content-Type': 'application/json',
         'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),

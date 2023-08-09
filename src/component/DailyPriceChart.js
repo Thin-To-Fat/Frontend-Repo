@@ -18,7 +18,7 @@ Chart.register(ArcElement, CategoryScale, LinearScale,PointElement,LineElement,T
 function DailyPriceChart() {
   const [chartData, setChartData] = useState(null);
   useEffect(() => {
-    axios.get("/api/v1/history/dashboard/today", {
+    axios.get("http://localhost:7070/api/v1/history/dashboard/today", {
       headers: {
         'Content-Type': 'application/json',
         'X-AUTH-TOKEN': localStorage.getItem("X-AUTH-TOKEN"),

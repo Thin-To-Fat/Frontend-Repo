@@ -4,7 +4,7 @@ import './FixedPrice.css';
 function FixedPrice() {
   const [fixed, setFixed] = useState();
   useEffect(()=> {
-    axios.get("/api/v1/history/dashboard/fixed",{
+    axios.get("http://localhost:7070/api/v1/history/dashboard/fixed",{
       headers: {
         'Content-Type': 'application/json',
         'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),

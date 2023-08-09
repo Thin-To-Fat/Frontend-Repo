@@ -4,7 +4,7 @@ import './CategoryBox.css';
 function CategoryBox(){
   const [categoryExpend, setCategoryExpend] = useState([]);
   useEffect(()=> {
-    axios.get("/api/v1/history/dashboard/category",{
+    axios.get("http://localhost:7070/api/v1/history/dashboard/category",{
       headers: {
         'Content-Type': 'application/json',
         'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),

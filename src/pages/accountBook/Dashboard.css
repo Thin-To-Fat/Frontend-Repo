@@ -23,7 +23,7 @@
     gap: 96px;
   }
   .dInfo{
-    width: 793px;
+    width: 819px;
     height: 273px;
     display: flex;
     gap: 75px;
@@ -40,6 +40,11 @@
 }
 .dPname > li{
   
+}
+
+.pencil{
+  width: 22px;
+  height: 22px;
 }
 .dExpectPrice{
   width: 416px;
@@ -196,12 +201,6 @@
   position: relative;
   
 }
-/* .dCategoPrice >div:nth-child(2){
-  position: absolute;
-  top:260px;
-  left: 240px;
-  z-index: 5;
-} */
 .ExpendPerTitle{
   font-size: 27px;
   color: #D9D9D9;
@@ -213,4 +212,25 @@
   justify-content: center;
   height: 400px;
   align-items: center;
+}
+
+.incomeModalContent{
+  position: absolute;
+  top: 291px;
+  right: 683px;
+  background-color: #fff;
+  width: 251px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.budgetModalContent{
+  position: absolute;
+  top: 352px;
+  right: 604px;
+  background-color: #fff;
+  width: 251px;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid black;
 }

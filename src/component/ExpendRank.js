@@ -4,7 +4,7 @@ import './ExpendRank.css';
 function ExpendRank(){
   const [rank, setRank] = useState({});
   useEffect(()=> {
-    axios.get("/api/v1/history/dashboard/top3",{
+    axios.get("http://localhost:7070/api/v1/history/dashboard/top3",{
       headers: {
         'Content-Type': 'application/json',
         'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),

@@ -4,7 +4,7 @@ import './MonthlyIssue.css';
 function MontlyIssue(){
   const [issue, setIssue] = useState({});
   useEffect(()=> {
-    axios.get("/api/v1/history/dashboard/threemonth",{
+    axios.get("http://localhost:7070/api/v1/history/dashboard/threemonth",{
       headers: {
         'Content-Type': 'application/json',
         'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),
