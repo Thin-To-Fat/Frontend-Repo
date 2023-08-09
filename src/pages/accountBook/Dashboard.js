@@ -121,7 +121,7 @@ function Dashboard() {
                     </li>
                     :
                     <li>
-                      &gt; 월 예산 : {String(incomeValue/10000).toLocaleString('ko-KR')}만원&nbsp;
+                      &gt; 월 예산 : {String(incomeValue/10000)?.toLocaleString('ko-KR')}만원&nbsp;
                       <img className='pencil' src={process.env.PUBLIC_URL + '/images/pencil.png'} onClick={()=>{setIncomeModalCheck(!incomeModalCheck)}}></img>
                     </li>
                     }
@@ -139,7 +139,7 @@ function Dashboard() {
                       </div>
                     </li>:
                     <li>
-                      &gt; 월 목표 금액 : {String(budgetValue/10000).toLocaleString('ko-KR')}만원&nbsp;
+                      &gt; 월 목표 금액 : {String(budgetValue/10000)?.toLocaleString('ko-KR')}만원&nbsp;
                       <img className='pencil' src={process.env.PUBLIC_URL + '/images/pencil.png'} onClick={()=>{setBudgetModalCheck(!budgetModalCheck)}}></img>
                     </li>
                     }
@@ -175,7 +175,7 @@ function Dashboard() {
                 <div className='dExpendPertitle'>예산 소진율</div>
                 <ExpendPer incomeValue={userinfo}/>
                 <div className="ExpendPerTitle">
-                  예산 : {userinfo.income.toLocaleString('ko-KR')}원
+                  예산 : {userinfo.income?.toLocaleString('ko-KR')}원
                 </div>
               </div>
               <ExpendRank/>
