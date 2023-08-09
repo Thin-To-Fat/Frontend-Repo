@@ -1,0 +1,76 @@
+.dExpendRank{
+  width: 925px;
+    height: 499px;
+    border: 3px solid #e6e6e6;
+    border-radius: 10px;
+}
+.dERtitle{
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 31px;
+  margin-left: 26px;
+}
+.dERchart{
+  width: 702px;
+  height: 269px;
+  margin: 0 auto;
+  margin-top: 53px;
+}
+.dERcontent{
+  width: 100%;
+  height: 101px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dERcontent > ul{
+  list-style: none;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    gap: 33px;
+    margin-top: 34px;
+}
+.dER1{
+  width: 40px;
+    height: 40px;
+    background-color: #ff0000;
+    border-radius: 5px;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+
+.dER2{
+  width: 40px;
+  height: 40px;
+  background-color: #00c92c;
+  border-radius: 5px;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+
+.dER3{
+    width: 40px;
+    height: 40px;
+    background-color: #ffc855;
+    border-radius: 5px;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+.dERobject{
+  font-size: 26px;
+  font-weight: bold;
+}
+.dERprice{
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 101px;
+  margin-right: 50px;
+}

@@ -3,6 +3,8 @@ import RegistTtfSaving from './pages/saving/RegistTtfSaving';
 import TestPage from './pages/accountBook/TestPage';
 import LoginPage from './pages/accountBook/LoginPage';
 import LibraryJM from './pages/library/Library';
+import Dashboard from './pages/accountBook/Dashboard';
+import SavingsListPage from './pages/saving/SavingsListPage';
 
 function App() {
   return (
@@ -10,7 +12,7 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       {/* 차례대로 대시보드, 입출금내역, 라이브러리 */}
       <Route path="/dashboard">
-        <Route index element={<TestPage />} />
+        <Route index element={<Dashboard />} />
       </Route>
       <Route path="/transaction">
         <Route index element={<TestPage />} />
@@ -19,8 +21,7 @@ function App() {
         <Route index element={<LibraryJM />} />
       </Route>
       <Route path="/saving">
-        <Route index element={<TestPage />} />
-        <Route path="ttfregist" element={<RegistTtfSaving />} />
+        <Route index element={<SavingsListPage />} />
       </Route>
     </Routes>
   );

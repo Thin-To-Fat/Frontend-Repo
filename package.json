@@ -11,12 +11,15 @@
     "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
+    "chart.js": "^4.3.2",
+    "faker": "^6.6.6",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
+    "react-with-important-style": "^0.2.2",
     "sass": "^1.64.2",
     "styled-components": "5.3.6",
-    "swiper": "^10.1.0",
+    "swiper": "^9.2.0",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
