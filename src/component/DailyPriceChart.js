@@ -15,7 +15,7 @@ import { Doughnut, Line } from 'react-chartjs-2';
 import './DailyPriceChart.css';
 Chart.register(ArcElement, CategoryScale, LinearScale,PointElement,LineElement,Title,Tooltip,Legend);
 
-function DailyPriceChart() {
+function DailyPriceChart({budgetValue}) {
   const [chartData, setChartData] = useState(null);
   useEffect(() => {
     axios.get("http://localhost:7070/api/v1/history/dashboard/today", {
@@ -58,7 +58,7 @@ function DailyPriceChart() {
     .catch(error => {
       console.error('API 요청 실패:', error);
     });
-  }, []);
+  }, [budgetValue]);
   const cdoptions = {
     plugins: {
       legend: {

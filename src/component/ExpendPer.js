@@ -15,7 +15,7 @@ import { Doughnut, Line } from 'react-chartjs-2';
 import './ExpendPer.css';
 Chart.register(ArcElement, CategoryScale, LinearScale,PointElement,LineElement,Title,Tooltip,Legend);
 
-function ExpendPer() {
+function ExpendPer({incomeValue}) {
   const [chartData, setChartData] = useState(null);
   const [userinfo, setUserinfo] = useState({});
   const fetchChartData = () => {
@@ -63,7 +63,7 @@ function ExpendPer() {
 
   useEffect(() => {
     fetchChartData();
-  }, []);
+  }, [incomeValue]);
 
   return (
     <>
