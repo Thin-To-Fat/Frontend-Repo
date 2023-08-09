@@ -7,6 +7,7 @@ import TTFScriptPage from './pages/saving/TTFScriptPage';
 import LibraryJM from './pages/library/Library';
 import Dashboard from './pages/accountBook/Dashboard';
 import SavingsListPage from './pages/saving/SavingsListPage';
+import Transaction from './pages/transaction/Transaction';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       {/* 차례대로 대시보드, 입출금내역, 라이브러리 */}
       <Route path="/dashboard">
         <Route index element={<Dashboard />} />
+      </Route>
+      <Route path="/transaction">
+        <Route index element={<Transaction />} />  
       </Route>
       <Route path="/library">
         <Route index element={<LibraryJM />} />

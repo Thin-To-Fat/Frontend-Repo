@@ -9,7 +9,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
     "chart.js": "^4.3.3",
-    "faker": "^6.6.6",
+    "faker": "^5.5.3",
     "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
@@ -46,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2"
   }
 }
