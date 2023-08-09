@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import RegistTtfSaving from './pages/saving/RegistTtfSaving';
-import TestPage from './pages/accountBook/TestPage';
 import LoginPage from './pages/accountBook/LoginPage';
 import RegistFormPage from './pages/saving/RegistFormPage';
 import RegistCompletePage from './pages/saving/RegistCompletePage';
@@ -18,14 +17,10 @@ function App() {
       <Route path="/dashboard">
         <Route index element={<Dashboard />} />
       </Route>
-      <Route path="/transaction">
-        <Route index element={<TestPage />} />
-      </Route>
       <Route path="/library">
         <Route index element={<LibraryJM />} />
       </Route>
       <Route path="/saving">
-        <Route index element={<TestPage />} />
         <Route path="scriptttf" element={< TTFScriptPage/>} />
         <Route path="ttfregist" element={<RegistTtfSaving />} />
         <Route path="writeform" element={<RegistFormPage />} />
