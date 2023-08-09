@@ -10,7 +10,6 @@ import 'swiper/css/navigation';
 //모달창 불러오기
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-// import "../../../public/images/loginImg.jpg"
 
 //시작
 function LibraryJM() {
@@ -48,7 +47,7 @@ function LibraryJM() {
                 <Swiper
                   className="secondSwiperb"
                   spaceBetween={83}
-                  slidesPerView={3.5}
+                  slidesPerView={3.2}
                   navigation={true}
                 >
                   {/* 입출금 맵 시작 */}
@@ -126,7 +125,7 @@ function LibraryJM() {
                 <Swiper
                   className="firstSwiperb"
                   spaceBetween={83}
-                  slidesPerView={3.5}
+                  slidesPerView={3.2}
                   navigation={true}
                 >
                   {/* 적금 맵 시작 */}
