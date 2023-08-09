@@ -1,0 +1,21 @@
+.chart-container4{
+   width: 352px;
+    height: 195px;
+    margin-left: 119px;
+    margin-top: 38px;
+}
+.DPCtitle{
+width: 213px;
+    height: 90px;
+    margin-top: -189px;
+    margin-left: 69px;
+    text-align: center;
+}
+.DPCstate{
+font-size: 55px;
+    font-weight: bold;
+}
+.DPCday-goal{
+font-size: 22px;
+    color: #b8b8b8;
+}

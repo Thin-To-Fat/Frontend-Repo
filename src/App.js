@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import RegistTtfSaving from './pages/saving/RegistTtfSaving';
 import TestPage from './pages/accountBook/TestPage';
 import LoginPage from './pages/accountBook/LoginPage';
+import Dashboard from './pages/accountBook/Dashboard';
 import SavingsListPage from './pages/saving/SavingsListPage';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       {/* 차례대로 대시보드, 입출금내역, 라이브러리 */}
       <Route path="/dashboard">
-        <Route index element={<TestPage />} />
+        <Route index element={<Dashboard />} />
       </Route>
       <Route path="/transaction">
         <Route index element={<TestPage />} />
