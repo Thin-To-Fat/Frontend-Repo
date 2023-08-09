@@ -8,9 +8,9 @@ import { useNavigate } from 'react-router-dom';
 function LoginPage() {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
-      email:"",
-      password:""
-   });
+		email:"",
+		password:""
+	});
 
   const changeUserDataFrom = (e) =>{
     setUserData({...userData, [e.target.name]:e.target.value})
