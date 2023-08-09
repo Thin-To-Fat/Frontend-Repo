@@ -18,67 +18,91 @@ function Dashboard() {
   const [budgetModalCheck, setBudgetModalCheck] = useState(false);
   const [budgetValue, setBudgetValue] = useState();
   
-  
-  useEffect(()=> {
+  useEffect(() => {
     axios.get("http://localhost:7070/api/v1/users/dashboard",{
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),
       },
-    }).then((response)=>{
-      if(response.data){
-        console.log(response.data);
+    }).then((response) => {
+      if (response.data) {
         setUserinfo(response.data.result);
-        setIncomeValue(response.data.result.income)
+        setIncomeValue(response.data.result.income);
+        setBudgetValue(response.data.result.goalBudget);
       }
     });
-  },[]);
+  }, []);
 
-  const changeIncome = (e) =>{
-    setIncomeValue(e.target.value)
-  }
-  const updateIncome = ()=>{
-    axios.put("http://localhost:7070/api/v1/users/dashboard/income",{income:incomeValue},{
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),
-      },
-    }).then((response)=>{
-      alert("성공")
-      setIncomeModalCheck(!incomeModalCheck)
-    });
-  }
-  const changeBudget = (e) =>{
-    setBudgetValue(e.target.value)
-  }
-  const updateBudget = ()=>{
-    axios.put("http://localhost:7070/api/v1/users/dashboard/goalBudget",{goalBudget:budgetValue},{
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),
-      },
-    }).then((response)=>{
-      alert("성공")
-      setBudgetModalCheck(!budgetModalCheck)
-    });
-  }
+  const changeIncome = (e) => {
+    setIncomeValue(e.target.value);
+  };
+
+  const updateIncome = async () => {
+    try {
+      await axios.put(
+        "http://localhost:7070/api/v1/users/dashboard/income",
+        { income: incomeValue },
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),
+          },
+        }
+      );
+      setUserinfo(prevUserinfo => ({
+        ...prevUserinfo,
+        income: incomeValue
+      }));
+      setIncomeModalCheck(false);
+    } catch (error) {
+      console.error("Error updating income:", error);
+      // Handle error if needed
+    }
+  };
+
+  const changeBudget = (e) => {
+    setBudgetValue(e.target.value);
+  };
+
+  const updateBudget = async () => {
+    try {
+      await axios.put(
+        "http://localhost:7070/api/v1/users/dashboard/goalBudget",
+        { goalBudget: budgetValue },
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-AUTH-TOKEN' : localStorage.getItem("X-AUTH-TOKEN"),
+          },
+        }
+      );
+      setUserinfo(prevUserinfo => ({
+        ...prevUserinfo,
+        goalBudget: budgetValue
+      }));
+      setBudgetModalCheck(false);
+    } catch (error) {
+      console.error("Error updating budget:", error);
+      // Handle error if needed
+    }
+  };
   return (
     <Template>
         <div className="bodyContent" id="DashboardContent">
-          { incomeModalCheck? 
+          {/* { incomeModalCheck? 
             <div className='incomeModal'>
               <div className='incomeModalContent'>
               <input type='text' value={incomeValue} onChange={changeIncome}/>
               <button type='button' onClick={updateIncome}>수정하기</button>
             </div>
-            </div>:null}
-          { budgetModalCheck? 
+            </div>:null} */}
+          {/* { budgetModalCheck? 
             <div className='budgetModal'>
               <div className='budgetModalContent'>
               <input type='text' value={budgetValue} onChange={changeBudget}/>
               <button type='button' onClick={updateBudget}>수정하기</button>
             </div>
-            </div>:null}
+            </div>:null} */}
             <div className='dTop'>
               <div className='dTopTitle'>프로필</div>
               <div className='dProfile'>
@@ -87,14 +111,42 @@ function Dashboard() {
                     <img src={process.env.PUBLIC_URL + '/images/Mask group.png'}></img>
                   </div>
                   <ul className='dPname'>{userinfo.name} 님
+                    { incomeModalCheck? 
+                    <li className='dashModalContainer'>
+                      &gt; 월 예산 : 
+                      <div className='dashModal incomeModal'>
+                        <input type='text' value={incomeValue} onChange={changeIncome}/>
+                        <button type='button' onClick={updateIncome}>저장</button>
+                      </div>
+                    </li>
+                    :
                     <li>
-                      &gt; 월 예산 : {(userinfo.income/10000).toLocaleString('ko-KR')}만원&nbsp;
+                      &gt; 월 예산 : {String(incomeValue/10000).toLocaleString('ko-KR')}만원&nbsp;
                       <img className='pencil' src={process.env.PUBLIC_URL + '/images/pencil.png'} onClick={()=>{setIncomeModalCheck(!incomeModalCheck)}}></img>
                     </li>
+                    }
+                    {/* <li>
+                      &gt; 월 예산 : {(userinfo.income/10000).toLocaleString('ko-KR')}만원&nbsp;
+                      <img className='pencil' src={process.env.PUBLIC_URL + '/images/pencil.png'} onClick={()=>{setIncomeModalCheck(!incomeModalCheck)}}></img>
+                    </li> */}
+                    
+                    { budgetModalCheck? 
+                    <li className='dashModalContainer'>
+                      &gt; 월 목표 금액 : 
+                      <div className='dashModal budgetModal'>
+                        <input type='text' value={budgetValue} onChange={changeBudget}/>
+                        <button type='button' onClick={updateBudget}>저장</button>
+                      </div>
+                    </li>:
                     <li>
-                      &gt; 월 목표 금액 : {(userinfo.goalBudget/10000).toLocaleString('ko-KR')}만원&nbsp;
+                      &gt; 월 목표 금액 : {String(budgetValue/10000).toLocaleString('ko-KR')}만원&nbsp;
                       <img className='pencil' src={process.env.PUBLIC_URL + '/images/pencil.png'} onClick={()=>{setBudgetModalCheck(!budgetModalCheck)}}></img>
                     </li>
+                    }
+                    {/* <li>
+                      &gt; 월 목표 금액 : {(userinfo.goalBudget/10000).toLocaleString('ko-KR')}만원&nbsp;
+                      <img className='pencil' src={process.env.PUBLIC_URL + '/images/pencil.png'} onClick={()=>{setBudgetModalCheck(!budgetModalCheck)}}></img>
+                    </li> */}
                   </ul>
                 </div>
                 <div className='dExpectPrice'>
@@ -115,15 +167,15 @@ function Dashboard() {
               </div>
               <div className='dDailyPrice'>
                 <div className='dDPtitle'>현재 하루 지출</div>
-                <DailyPriceChart/>
+                <DailyPriceChart budgetValue={userinfo} />
               </div>
             </div>
             <div className='dContentMiddle'>
               <div className='dExpendPer'>
                 <div className='dExpendPertitle'>예산 소진율</div>
-                <ExpendPer/>
+                <ExpendPer incomeValue={userinfo}/>
                 <div className="ExpendPerTitle">
-                  예산 : {userinfo.income?.toLocaleString('ko-KR')}원
+                  예산 : {userinfo.income.toLocaleString('ko-KR')}원
                 </div>
               </div>
               <ExpendRank/>

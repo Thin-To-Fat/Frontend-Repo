@@ -43,7 +43,7 @@ const SavingsListPage = () => {
     setModalOpen(true);
 
     axios
-      .get(`/api/v1/savings/bankInfo`, {
+      .get(`http://localhost:3000/api/v1/savings/bankInfo`, {
         withCredentials: true,
       })
       .then((res) => {

@@ -15,7 +15,7 @@
   margin-left: 34px;
 }
 .dProfile{
-  width: 1305px;
+  width: 1325px;
     height: 273px;
     display: flex;
     margin: 0 auto;
@@ -23,10 +23,10 @@
     gap: 96px;
   }
   .dInfo{
-    width: 819px;
+    width: 975px;
     height: 273px;
     display: flex;
-    gap: 75px;
+    gap: 50px;
   }
   .dPimg{
     width: 283px;
@@ -215,22 +215,58 @@
 }
 
 .incomeModalContent{
-  position: absolute;
-  top: 291px;
-  right: 683px;
+  position: fixed;
+  top: 254px;
+  right: 670px;
   background-color: #fff;
-  width: 251px;
-  height: 30px;
+  width: 255px;
+  height: 35px;
   border: 2px solid black;
   border-radius: 5px;
+  z-index: 1000;
 }
 .budgetModalContent{
-  position: absolute;
-  top: 352px;
-  right: 604px;
+  position: fixed;
+  top: 316px;
+  right: 596px;
   background-color: #fff;
-  width: 251px;
-  height: 30px;
+  width: 255px;
+  height: 35px;
   border-radius: 5px;
   border: 2px solid black;
+}
+
+.dashModalContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.dashModal {
+  width: 235px;
+  height: 35px;
+  display: flex;
+  gap: 10px;
+}
+
+.incomeModal {
+
+}
+.dashModal>input {
+  width: 60%;
+  height: 100%;
+  border: none;
+  border-bottom: 3px solid #000;
+  padding-bottom: 5px;
+}
+.dashModal >button{
+  width: 40%;
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #000;
+  background-color: #efefef;
+  border-radius: 5px;
+  justify-content: center;
 }
