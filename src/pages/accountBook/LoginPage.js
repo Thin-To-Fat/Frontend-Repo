@@ -4,7 +4,6 @@ import './LoginPage.scss';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 function LoginPage() {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
@@ -57,7 +56,9 @@ function LoginPage() {
             onChange={changeUserDataFrom}
           />
 
-          <button type='button' onClick={loginTrial}>로그인</button>
+          <button type="button" onClick={loginTrial}>
+            로그인
+          </button>
         </div>
         <div id="userLoginAction">
           <div className="userActionBtns" id="findId">

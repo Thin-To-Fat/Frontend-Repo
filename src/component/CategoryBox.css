@@ -1,0 +1,33 @@
+
+.dCategoryBox{
+  margin-left: 60px;
+}
+.dCategory{
+  width: 400px;
+  height: 50px;
+  display: flex;
+  gap: 60px;
+  margin-top: 11px;
+}
+.dCategory > ul{
+  width: 210px;
+  list-style: none;
+  font-size: 20px;
+  color: #6d6d6d;
+}
+.dCategory > ul > li{
+  float: left;
+  margin-left: 13px;
+}
+.dCategory > ul > li > img{
+  width: 31px;
+  height: 32px;
+}
+.dCprice{
+  clear: both;
+  line-height: 65px;
+  font-size: 20px;
+  color: #6d6d6d;
+  width: 91px;
+  text-align: right;
+}

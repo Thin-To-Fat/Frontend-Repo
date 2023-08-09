@@ -1,18 +1,17 @@
-
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
- 
+
 .Template {
-    display: block;
-    box-sizing: border-box;  
+  display: block;
+  box-sizing: border-box;
 }
-.templateHeader{
-    height: 80px;
-    position: relative;
+.templateHeader {
+  height: 80px;
+  position: relative;
 }
 #templateLogo {
     position: absolute;
@@ -31,21 +30,20 @@ body::-webkit-scrollbar {
     margin-right: 24px;
     padding-top: 30px;
 
-    background: #0046FF;
-    border-radius: 22px;
+  background: #0046ff;
+  border-radius: 22px;
 }
 
-
-.bodyContent{
-    width: 100%;
-    height: 90vh;
-    margin-right: 10px;
-    overflow-x: hidden;
-    overflow-y: auto;
+.bodyContent {
+  width: 100%;
+  height: 90vh;
+  margin-right: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-#menuSelectCheck{
-    width: 10px;
-    height: auto;
-    background-image: none;
+#menuSelectCheck {
+  width: 10px;
+  height: auto;
+  background-image: none;
 }
