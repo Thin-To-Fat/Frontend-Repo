@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import RegistTtfSaving from './pages/saving/RegistTtfSaving';
 import TestPage from './pages/accountBook/TestPage';
 import LoginPage from './pages/accountBook/LoginPage';
+import LibraryJM from './pages/library/Library';
 import Dashboard from './pages/accountBook/Dashboard';
 import SavingsListPage from './pages/saving/SavingsListPage';
 
@@ -17,7 +18,7 @@ function App() {
         <Route index element={<TestPage />} />
       </Route>
       <Route path="/library">
-        <Route index element={<TestPage />} />
+        <Route index element={<LibraryJM />} />
       </Route>
       <Route path="/saving">
         <Route index element={<SavingsListPage />} />
