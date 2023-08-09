@@ -20,7 +20,6 @@ function App() {
       </Route>
       <Route path="/saving">
         <Route index element={<SavingsListPage />} />
-        <Route path="ttfregist" element={<RegistTtfSaving />} />
       </Route>
     </Routes>
   );
