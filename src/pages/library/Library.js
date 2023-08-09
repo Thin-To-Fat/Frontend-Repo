@@ -47,7 +47,7 @@ function LibraryJM() {
                 <Swiper
                   className="secondSwiperb"
                   spaceBetween={83}
-                  slidesPerView={3.2}
+                  slidesPerView={2.5}
                   navigation={true}
                 >
                   {/* 입출금 맵 시작 */}
@@ -125,7 +125,7 @@ function LibraryJM() {
                 <Swiper
                   className="firstSwiperb"
                   spaceBetween={83}
-                  slidesPerView={3.2}
+                  slidesPerView={2.5}
                   navigation={true}
                 >
                   {/* 적금 맵 시작 */}

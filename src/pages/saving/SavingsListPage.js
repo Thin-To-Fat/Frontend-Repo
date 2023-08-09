@@ -268,8 +268,8 @@ const SavingsListPage = () => {
                   <div>{k.sName}</div>
                 </div>
                 <div className="savingsRates">
-                  <p>{k.maxRate} %</p>
-                  <div>{k.basicRate} %</div>
+                  <p>최고 &nbsp;{k.maxRate} %</p>
+                  <div>기본 &nbsp;{k.basicRate} %</div>
                 </div>
               </div>
               {showDiv.includes(k.savingsId) ? (
@@ -286,7 +286,6 @@ const SavingsListPage = () => {
                         {' '}
                         자세히 보기{' '}
                       </a>
-                      {/* <a href={k.link}> 자세히 보기 </a> */}
                     </div>
                     <div className="savingsDetailInfoBody">
                       <img

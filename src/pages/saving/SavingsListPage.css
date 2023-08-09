@@ -37,8 +37,8 @@
 }
 
 .findSavingsWrap {
-  width: 1000px;
-  margin-left: 200px;
+  width: 1205px;
+  margin-left: 98px;
 }
 
 .findSavingsHeader {
@@ -52,7 +52,9 @@
 
 .findSavingsBody {
   display: flex;
+  align-items: center;
   height: 80px;
+  margin-bottom: 20px;
 }
 
 .findSavingsBody > input {
@@ -64,9 +66,9 @@
   margin-right: 3px;
 }
 .findSavingsBody > button {
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
+  width: 60px !important;
+  height: 60px !important;
+  cursor: pointer !important;
 }
 .findSavingsBody > button > img {
   width: 60px;
@@ -76,7 +78,7 @@
 .findSavingsBody > div {
   width: 1px;
   height: 52px;
-  margin-top: 5px;
+  margin-top: 2px;
   border: 1px solid #000;
 }
 
@@ -91,7 +93,7 @@
   color: rgba(0, 0, 0, 0.34);
 }
 .findSavingsFooter > button {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .savingsListWrap {
@@ -161,16 +163,17 @@
   line-height: normal;
 }
 
-button {
+#SavingsPage button {
   all: unset;
 }
 
 .savingsDetailInfoBtn {
-  width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
+  width: 100px !important;
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: space-between !important;
+  cursor: pointer !important;
 }
 .savingsDetailInfoBtn > div {
   margin: 10px 0 10px 0;
@@ -209,7 +212,7 @@ button {
   align-items: center;
 
   width: 100%;
-  margin: 1px;
+  margin-top: 25px;
   gap: 550px;
 }
 .savingsDetailInfoHeader > p {
@@ -270,11 +273,11 @@ button {
 }
 
 .savingsDetailInfoHideBtn {
-  width: 75px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
+  width: 75px !important;
+  display: flex !important ;
+  align-items: center !important;
+  justify-content: space-between !important;
+  cursor: pointer !important;
 }
 .savingsDetailInfoHideBtn > div {
   margin: 10px 0 10px 0;
@@ -358,22 +361,22 @@ button {
 }
 
 .BankModalContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
 
-  cursor: pointer;
-  color: #000;
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
+  cursor: pointer !important;
+  color: #000 !important;
+  font-family: Inter !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  line-height: normal !important;
 
-  width: 100px;
-  height: 70px;
-  border-radius: 25px;
+  width: 100px !important;
+  height: 70px !important;
+  border-radius: 25px !important;
 }
 .BankModalContent > img {
   width: 40px;

@@ -7,27 +7,30 @@ import { useNavigate } from 'react-router-dom';
 function LoginPage() {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
-		"email":"",
-		"password":""
-	});
-
-  const changeUserDataFrom = (e) =>{
-    setUserData({...userData, [e.target.name]:e.target.value})
-  }
- 
-  const loginTrial  = () => {
-    console.log(userData)
-    axios.post( "/api/v1/users/login" , userData, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }).then((response) => {
-      // localStorage.setItem('X-AUTH-PATH', JSON.stringify(response.data.result));
-      localStorage.setItem('X-AUTH-TOKEN', response.data.result.token);
-      navigate("/dashboard")
-    }).catch(()=>{
-      alert("로그인에 실패했습니다.")
+    email: '',
+    password: '',
   });
+
+  const changeUserDataFrom = (e) => {
+    setUserData({ ...userData, [e.target.name]: e.target.value });
+  };
+
+  const loginTrial = () => {
+    console.log(userData);
+    axios
+      .post('/api/v1/users/login', userData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        // localStorage.setItem('X-AUTH-PATH', JSON.stringify(response.data.result));
+        localStorage.setItem('X-AUTH-TOKEN', response.data.result.token);
+        navigate('/dashboard');
+      })
+      .catch(() => {
+        alert('로그인에 실패했습니다.');
+      });
   };
 
   return (
@@ -49,7 +52,7 @@ function LoginPage() {
             onChange={changeUserDataFrom}
           />
           <input
-            type="text"
+            type="password"
             id="userPwd"
             name="password"
             placeholder="비밀번호"

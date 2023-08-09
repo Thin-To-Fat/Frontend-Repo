@@ -1,4 +1,3 @@
-
 import './Template.scss';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
@@ -43,6 +42,9 @@ const Template = ({ children }) => {
     height: 50px;
     margin-left: auto;
     margin-right: auto;
+    #menuName {
+      cursor: pointer;
+    }
     & > #menuCkImg {
       width: 30px;
       height: 30px;
