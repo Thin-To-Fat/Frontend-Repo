@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+
 import './Template.scss';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';

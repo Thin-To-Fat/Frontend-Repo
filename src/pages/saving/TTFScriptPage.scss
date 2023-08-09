@@ -1,0 +1,134 @@
+#ttfScriptContent{
+  background-color: #EAF3FA;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  height: 3450px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#ttfScriptImgContent{
+  position: relative;
+
+  img:nth-child(1){
+    position: absolute;
+    top:0;
+    left: -68px;
+    width: 1100px;
+  }
+  img:nth-child(2){
+    position: absolute;
+    top:1200px;
+    right: 50px;
+    width: 900px;
+  }
+}
+
+#ttfScriptTextContent{
+  position: relative;
+  top: 1700px;
+  right: 35px;
+  width: 1050px;
+}
+
+#ttfScriptTextContent > #method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #methodTitle{
+    width: 80%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 999;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+  #methodContent{
+    width: 80%;
+    display: flex;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    height: 70px;
+    margin-top: 20px;
+    padding-left: 35px;
+
+    p:nth-child(1){
+      font-family: 'Inter';
+      font-style: normal;
+      font-size: 25px;
+      font-weight: 999;
+      line-height: 10px;
+      margin-right: 20px;
+    }
+    p:nth-child(2){
+      font-family: 'Inter';
+      font-style: normal;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 17px;
+      margin-right: 20px;
+    }
+  }
+}
+
+#ttfScriptTextContent > #script {
+  display: flex;
+  flex-direction: column;
+  width: 850px;
+  height: 1100px;
+  margin-top: 60px;
+  padding-bottom: 60px;
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+
+  background-color: #FFFFFF;
+
+  
+}
+#ttfScriptTextContent > #script #scriptForm{
+  width: 90%;
+  display: flex;
+  padding-top: 20px;
+
+  #title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 22px;
+    font-weight: 999;
+    margin-right: 60px;
+    width: 140px;
+    line-height: 35px;
+  }
+  #content{
+    width: 75%;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 30px;
+    > p:nth-child(1){
+      margin-top: 0px;
+    }
+    
+  }
+
+}
+#ttfScriptContent > button{
+  position: relative;
+  bottom: -1750px;
+  right: -400px;
+  width: 150px;
+  height: 50px;
+  background-color: #0046FF;
+  border: none;
+  color: #FFFFFF;
+  margin-left: 10px;
+  font-size: 20px;
+}

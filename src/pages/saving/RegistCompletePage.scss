@@ -1,0 +1,40 @@
+#registCompletePage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#savingCompletePic{
+  width: 600px;
+
+}
+#savingCompleteBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button{
+      width: 120px;
+      height: 50px;
+      background-color: #0046FF;
+      border: none;
+      color: #FFFFFF;
+      margin-left: 10px;
+      font-size: 17px;
+  }
+}
+#registCompleteContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+  p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 21px;
+    text-align: center;
+  }
+}
