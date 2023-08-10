@@ -291,16 +291,20 @@ const SavingsListPage = () => {
                       <img
                         src={process.env.PUBLIC_URL + '/images/money-bag 1.png'}
                       ></img>
-                      <div className="savingsDetailContent">
-                        <p>가입 금액</p>
-                        <span>최소 {k.joinMoney}원 이상</span>
+                      <div>
+                        <div className="savingsDetailContent">
+                          <p>가입 금액</p>
+                          <span>최소 {k.joinMoney}원 이상</span>
+                        </div>
                       </div>
                       <img
                         src={process.env.PUBLIC_URL + '/images/user 1.png'}
                       ></img>
-                      <div className="savingsDetailContent">
-                        <p>가입 대상</p>
-                        <span>{k.joinWho}</span>
+                      <div>
+                        <div className="savingsDetailContent">
+                          <p>가입 대상</p>
+                          <span>{k.joinWho}</span>
+                        </div>
                       </div>
 
                       <img
@@ -309,9 +313,11 @@ const SavingsListPage = () => {
                           '/images/graph-analysis 1.png'
                         }
                       ></img>
-                      <div className="savingsDetailContent">
-                        <p>가입방법</p>
-                        <span>{k.saveHow}</span>
+                      <div>
+                        <div className="savingsDetailContent">
+                          <p>가입방법</p>
+                          <span>{k.saveHow}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
