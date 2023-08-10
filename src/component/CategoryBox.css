@@ -1,13 +1,14 @@
 
 .dCategoryBox{
   margin-left: 60px;
+  margin-top: 43px;
 }
 .dCategory{
   width: 400px;
   height: 50px;
   display: flex;
   gap: 60px;
-  margin-top: 11px;
+  margin-top: 10px;
 }
 .dCategory > ul{
   width: 210px;
@@ -25,7 +26,7 @@
 }
 .dCprice{
   clear: both;
-  line-height: 65px;
+  line-height: 27px;
   font-size: 20px;
   color: #6d6d6d;
   width: 91px;
