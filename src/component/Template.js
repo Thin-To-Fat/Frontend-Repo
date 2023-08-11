@@ -102,6 +102,16 @@ const Template = ({ children }) => {
               적금상품
             </div>
           </Menu>
+
+          <div id="logoutArea" onClick={() => {
+              localStorage.clear()
+              navigate('/')}}>
+            <img
+            src={process.env.PUBLIC_URL + '/images/logoutImg.png'}
+            alt=""
+            id="logoutLogo"
+            />로그아웃
+          </div>
         </div>
         {children}
       </div>

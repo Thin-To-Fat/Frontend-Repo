@@ -8,6 +8,7 @@ import LibraryJM from './pages/library/Library';
 import Dashboard from './pages/accountBook/Dashboard';
 import SavingsListPage from './pages/saving/SavingsListPage';
 import Transaction from './pages/transaction/Transaction';
+import AttendPage from './pages/point/AttendPage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="registcomplete" element={<RegistCompletePage />} />
         <Route index element={<SavingsListPage />} />
       </Route>
+      <Route path="/attend" element={<AttendPage/>}/>
     </Routes>
   );
 }
