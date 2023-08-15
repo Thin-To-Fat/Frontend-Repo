@@ -24,8 +24,8 @@ body::-webkit-scrollbar {
 }
 .sideBar {
   box-sizing: border-box;
-  width: 280px;
-  height: 800px;
+  width: 290px;
+  height: 820px;
   margin-left: 26px;
   margin-right: 24px;
   padding-top: 30px;
@@ -48,18 +48,18 @@ body::-webkit-scrollbar {
   background-image: none;
 }
 
-#logoutArea{
-  color: #FFF;
+#logoutArea {
+  color: #fff;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
   font-size: 18px;
-  margin-top: 520px;
+  margin-top: 550px;
   margin-left: 30px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  img{
+  img {
     width: 25px;
     margin-right: 5px;
   }
