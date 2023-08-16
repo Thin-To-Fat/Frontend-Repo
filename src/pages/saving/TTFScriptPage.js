@@ -1,9 +1,26 @@
 import Template from '../../component/Template';
 import './TTFScriptPage.scss';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function TTFScriptPage() {
   const navigate = useNavigate();
+
+  const startRegist = () => {
+    axios
+      .get('http://localhost:7070/api/v1/ttf/registCheck', {
+        headers: {
+          'X-AUTH-TOKEN': localStorage.getItem('X-AUTH-TOKEN'),
+        },
+      })
+      .then((response) => {
+        if (response.data.result === 0) {
+          navigate('/saving/ttfregist');
+        } else {
+          alert('이미 가입하신 TTF 적금이 존재합니다.');
+        }
+      });
+  };
   return (
     <Template>
       <div className="bodyContent" id="ttfScriptContent">
@@ -95,12 +112,7 @@ function TTFScriptPage() {
             </div>
           </div>
         </div>
-        <button
-          type="button"
-          onClick={() => {
-            navigate('/saving/ttfregist');
-          }}
-        >
+        <button type="button" onClick={startRegist}>
           <span>신청하기</span>
         </button>
       </div>

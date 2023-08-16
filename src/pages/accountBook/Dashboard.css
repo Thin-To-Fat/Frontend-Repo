@@ -1,64 +1,122 @@
-#DashboardContent{
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
+#DashboardContent {
 }
-.dTop{
+.dTop {
   width: 1590px;
   height: 417px;
   border: 3px solid #e6e6e6;
   border-radius: 10px;
   margin: 0 auto;
 }
-.dTopTitle{
+.dTopTitle {
   font-size: 22px;
   font-weight: bold;
   margin-top: 33px;
   margin-left: 34px;
 }
-.dProfile{
-  width: 1325px;
-    height: 273px;
-    display: flex;
-    margin: 0 auto;
-    margin-top: 29px;
-    gap: 96px;
-  }
-  .dInfo{
-    width: 975px;
-    height: 273px;
-    display: flex;
-    gap: 50px;
-  }
-  .dPimg{
-    width: 283px;
-    height: 273px;
-  }
-  .dPname{
-    list-style: none;
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 61px;
+.dProfile {
+  width: 1400px;
+  height: 273px;
+  display: flex;
+  margin-left: 130px;
+  margin-right: 100px;
+  /* gap: 96px; */
 }
-.dPname > li{
-  
+.dInfo {
+  margin-top: 30px;
+  width: 975px;
+  height: 273px;
+  display: flex;
+  gap: 50px;
+}
+.dPimg {
+  width: 283px;
+  height: 273px;
+}
+.dPname {
+  list-style: none;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 61px;
+  margin-top: 20px;
+}
+.dPname > li {
 }
 
-.pencil{
+.pencil {
   width: 22px;
   height: 22px;
 }
-.dExpectPrice{
+.dExpectPrice {
   width: 416px;
-  height: 114px;
-  margin-top: 30px;
-}
-.dEPtitle{
+  /* height: 150px; */
   border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+#userPointArea {
+  margin-top: 10px;
+}
+.dEPtitle {
   font-size: 32px;
   font-weight: bold;
-  padding-left: 71px;
   line-height: 60px;
 }
-.dContentTop{
+.userPointMenu {
+  margin-left: 20px;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.userPointMenu div {
+  width: 270px;
+  margin-left: 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 37px;
+  cursor: pointer;
+}
+.dTop #userTitle {
+  display: inline-flex;
+  background-color: #ffc855;
+  border: 1px solid black;
+  border-radius: 25px;
+  height: 42px;
+  width: 220px;
+  text-align: center;
+  font-family: 'Jua';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 40px;
+  margin-right: 15px;
+  justify-content: space-around;
+}
+.dTop #userpName {
+  display: inline;
+  line-height: 70px;
+  padding-top: 20px;
+}
+#attendIcon {
+  width: 40px;
+  margin-right: 5px;
+}
+#gotchaIcon {
+  width: 45px;
+}
+#detailPointMenu {
+  width: 15px;
+  height: 30px;
+  margin-top: 2px;
+}
+.dContentTop {
   width: 1590px;
   height: 527px;
   margin: 0 auto;
@@ -66,7 +124,11 @@
   display: flex;
   gap: 36px;
 }
-.dCategoPrice{
+#dashboardProfileRight {
+  width: 500px;
+  margin-left: 100px;
+}
+.dCategoPrice {
   width: 978px;
   height: 527px;
   border: 3px solid #e6e6e6;
@@ -76,7 +138,7 @@
   flex-direction: column;
   align-content: flex-start;
 }
-.dCPtitle{
+.dCPtitle {
   width: 200px;
   font-size: 22px;
   font-weight: bold;
@@ -84,137 +146,136 @@
   margin-left: 24px;
 }
 
-.dDailyPrice{
+.dDailyPrice {
   width: 576px;
   height: 527px;
   border: 3px solid #e6e6e6;
   border-radius: 10px;
 }
-.dDPtitle{
+.dDPtitle {
   font-size: 22px;
   font-weight: bold;
   margin-top: 25px;
   margin-left: 24px;
 }
-.dContentMiddle{
+.dContentMiddle {
   width: 1590px;
-    height: 499px;
-    margin: 0 auto;
-    margin-top: 36px;
-    display: flex;
-    gap: 36px;
+  height: 499px;
+  margin: 0 auto;
+  margin-top: 36px;
+  display: flex;
+  gap: 36px;
 }
-.dExpendPer{
+.dExpendPer {
   width: 629px;
-    height: 499px;
-    border: 3px solid #e6e6e6;
-    border-radius: 10px;
+  height: 499px;
+  border: 3px solid #e6e6e6;
+  border-radius: 10px;
 }
-.dExpendPertitle{
+.dExpendPertitle {
   font-size: 22px;
   font-weight: bold;
   margin-top: 25px;
   margin-left: 17px;
 }
 
-.dContentBottom{
+.dContentBottom {
   width: 1590px;
   height: 580px;
   margin: 0 auto;
   margin-top: 25px;
 }
-.dMonthlyExpend{
+.dMonthlyExpend {
   width: 1590px;
-    height: 580px;
-    border: 3px solid #e6e6e6;
-    border-radius: 10px;
+  height: 580px;
+  border: 3px solid #e6e6e6;
+  border-radius: 10px;
 }
-.dMEtitel{
+.dMEtitel {
   font-size: 22px;
   font-weight: bold;
   margin-top: 25px;
   margin-left: 24px;
 }
-.dBottom{
+.dBottom {
   width: 1590px;
   height: 521px;
   margin: 0 auto;
   margin-top: 58px;
   margin-bottom: 117px;
 }
-.dMItitle{
+.dMItitle {
   font-size: 28px;
-  font-weight: bold
+  font-weight: bold;
 }
-.dMontlyIssue{
+.dMontlyIssue {
   width: 1590px;
   height: 459px;
   margin-top: 28px;
   display: flex;
-  gap: 65px
+  gap: 65px;
 }
-.dMIcontent{
+.dMIcontent {
   width: 487px;
   height: 459px;
   border: 1px solid #e6e6e6;
   border-radius: 10px;
   box-shadow: 4px 5px 7px 0px gray;
 }
-.dMIheader{
+.dMIheader {
   width: 372px;
   height: 256px;
   margin: 0 auto;
 }
-.dMIheader > img{
+.dMIheader > img {
   width: 100%;
   height: 100%;
 }
-.dMIbody{
+.dMIbody {
   width: 372px;
-    height: 71px;
-    margin: 0 auto;
-    margin-top: 12px;
-    border-bottom: 1px solid #e8e8e8;
+  height: 71px;
+  margin: 0 auto;
+  margin-top: 12px;
+  border-bottom: 1px solid #e8e8e8;
 }
-.dMIbtitle{
+.dMIbtitle {
   font-size: 15px;
   font-weight: bold;
   color: #9c52ff;
 }
-.dMIbsubtitle{
+.dMIbsubtitle {
   font-size: 17px;
   font-weight: bold;
   margin-top: 11px;
 }
-.dMIfooter{
+.dMIfooter {
   width: 293px;
   height: 37px;
   margin-left: 57px;
   margin-top: 34px;
 }
-.dMIfcontent{
+.dMIfcontent {
   font-size: 12px;
   font-weight: bold;
   color: #9d9d9d;
 }
-.dCategoPrice{
+.dCategoPrice {
   position: relative;
-  
 }
-.ExpendPerTitle{
+.ExpendPerTitle {
   font-size: 27px;
-  color: #D9D9D9;
+  color: #d9d9d9;
   margin-top: -6px;
   margin-left: 202px;
 }
-.cateExpendsInfo{
+.cateExpendsInfo {
   display: flex;
   justify-content: center;
   height: 400px;
   align-items: center;
 }
 
-.incomeModalContent{
+.incomeModalContent {
   position: fixed;
   top: 254px;
   right: 670px;
@@ -225,7 +286,7 @@
   border-radius: 5px;
   z-index: 1000;
 }
-.budgetModalContent{
+.budgetModalContent {
   position: fixed;
   top: 316px;
   right: 596px;
@@ -250,16 +311,15 @@
 }
 
 .incomeModal {
-
 }
-.dashModal>input {
+.dashModal > input {
   width: 60%;
   height: 100%;
   border: none;
   border-bottom: 3px solid #000;
   padding-bottom: 5px;
 }
-.dashModal >button{
+.dashModal > button {
   width: 40%;
   height: 100%;
   font-size: 20px;
