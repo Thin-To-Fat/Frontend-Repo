@@ -341,11 +341,13 @@ useEffect(() => {
               {Object.keys(dailyExpenses).map((date) => (
                 <div className='TXhistorywrap' key={date}>
                   <div className='TXhistorydatesum'>
+
                     <div className='TXhistorydate'><p>{date}</p></div>
                     <div className='TXhistorysum'> <p>{dailyExpenses[date].sum.toLocaleString()}원</p></div>
                   </div>
                   {dailyExpenses[date].items.map((item, index) => (
                     <div className='TXhistoryData' key={index}>
+                      <div className='TXData0'><img src={item.bankurl}></img></div>                   
                       <div className='TXData1'>{item.time}</div>
                       <div className='TXData2'><img src = {item.categoryImg}></img>{item.category}</div> {/* 카테고리 데이터가 필요하다면 매핑할 수 있습니다. */}
                       <div className='TXData3'>{item.detail}</div>
