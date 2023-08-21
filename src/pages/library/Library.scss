@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Single+Day&display=swap');
+#mostWhole {
+  width: 100%;
+}
+
+.apex {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.whole1st2nd {
+  margin-top: 27px;
+}
+
+.firstLib,
+.secondLib {
+  color: #000;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: 'Inter', sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 37px;
+}
+
+.secondLib {
+  margin-top: 100px;
+}
+
+.firstLibbody,
+.secondLibbody {
+  border-top: 3px solid lightgray;
+  --swiper-theme-color: rgba(178, 178, 178, 0.35);
+}
+
+.libBanks {
+  margin-top: 100px;
+  width: 530px !important;
+  height: 295px !important;
+
+  border-radius: 10px;
+  border: 3px solid rgba(85, 85, 85, 0.15);
+}
+
+.bankNick {
+  display: flex;
+}
+
+.eachBank {
+  color: #000;
+  font-family: 'Inter' sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+
+  margin-top: 18px;
+  margin-left: 28px;
+  line-height: normal;
+}
+
+.eachNick {
+  color: #6d6d6d;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+
+  margin-top: 17px;
+  margin-left: 10px;
+  line-height: 40px;
+}
+
+.eachBankImg {
+  margin-left: 28px;
+  // animation: imgrotate 1s linear infinite;
+  // transform-origin: 1% 1%;
+}
+
+// @keyframes imgrotate {
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+.imgTypeAcc {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.typeAmount {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  margin-left: 39px;
+}
+
+.changeBtn {
+  padding: 1px 10px !important;
+  border-radius: 10px !important;
+  line-height: 30px !important;
+  height: 30px !important;
+  font-family: 'Inter', sans-serif !important;
+
+  margin-top: 20px !important;
+  margin-left: auto;
+  margin-right: 2%;
+
+  transition: all 0.2s ease-in-out !important;
+}
+
+.changeBtn:hover {
+  transform: scale(1.1);
+}
+
+.modalBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+}
+
+#contained-modal-title-vcenter {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700;
+  // animation: swing 1s ease !important;
+  // animation-iteration-count: 1 !important;
+  // animation: jmrotate 1s linear infinite;
+  // transform-origin: 50% 50%;
+}
+
+// @keyframes swing {
+//   15% {
+//     transform: translateX(5px);
+//   }
+//   30% {
+//     transform: translateX(-5px);
+//   }
+//   50% {
+//     transform: translateX(3px);
+//   }
+//   65% {
+//     transform: translateX(-3px);
+//   }
+//   80% {
+//     transform: translateX(2px);
+//   }
+//   100% {
+//     transform: translateX(0);
+//   }
+// }
+
+// @keyframes jmrotate {
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+.mobtn1,
+.mobtn2 {
+  color: white !important;
+  // animation: rotatejm 1s linear infinite;
+  // transform-origin: 50% 50%;
+}
+
+// @keyframes rotatejm {
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+.mobtn1:hover {
+  background-color: #0046ff !important;
+}
+
+.mobtn2:hover {
+  background-color: black !important;
+}
+
+.swiper-wrapper {
+  justify-content: flex-start !important;
+}
+
+input::placeholder {
+  color: #b8b8b8;
+  font-style: 'Inter', sans-serif;
+}
+
+// .wholeModal {
+//   animation: rotatejm 1s linear infinite;
+//   transform-origin: 50% 50%;
+// }
+
+// @keyframes rotatejm {
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }

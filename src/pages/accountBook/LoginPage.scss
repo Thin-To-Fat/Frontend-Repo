@@ -1,0 +1,90 @@
+#loginContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+  #userloginArea {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 600px;
+    width: 500px;
+    box-shadow: 4px 5px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #loginImg {
+    width: 400px;
+    height: 250px;
+  }
+  #signinGo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #signinGo > #loginLogoTxt {
+    margin-bottom: 10px;
+    /*font-setting*/
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 25px;
+    text-align: center;
+  }
+  
+  #signinGo > input {
+    background: transparent;
+    height: 40px;
+    width: 300px;
+    margin-bottom: 10px;
+    /*font-setting*/
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 15px;
+  }
+  #signinGo > button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: transparent;
+    height: 45px;
+    width: 100%;
+    border: none;
+    background-color: #ffd43d;
+  
+    /*font-setting*/
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 17px;
+    text-align: center;
+  }
+  #userLoginAction {
+    height: 50px;
+    display: flex;
+    width: 290px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .userActionBtns {
+    display: inline;
+    height: 50px;
+  
+    /*font-setting*/
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 50px;
+    text-align: center;
+  }
+  
+  .vLine {
+    border-right: 1px solid black;
+    height: 20px;
+  }

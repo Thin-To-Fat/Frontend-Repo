@@ -1,0 +1,27 @@
+.chart-container{
+  width: 388px;
+  height: 388px;
+  margin-left: 100px;
+  margin-top: 36px;
+  margin-right: 0px !important;
+}
+.CEchartTitle{
+    width: 189px;
+    height: 135px;
+    margin-top: -251px;
+    margin-left: 99px;
+    text-align: center;
+    line-height: 42px;
+}
+.MaxExpendCategory{
+font-size: 22px;
+    color: #b8b8b8;
+}
+.MECname{
+    font-size: 45px;
+    font-weight: bold;
+}
+.MECprice{
+font-size: 22px;
+    color: #b8b8b8;
+}

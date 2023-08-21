@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+#DashboardContent {
+}
+.dTop {
+  width: 1590px;
+  height: 417px;
+  border: 3px solid #e6e6e6;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.dTopTitle {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 33px;
+  margin-left: 34px;
+}
+.dProfile {
+  width: 1400px;
+  height: 273px;
+  display: flex;
+  margin-left: 130px;
+  margin-right: 100px;
+  /* gap: 96px; */
+}
+.dInfo {
+  margin-top: 30px;
+  width: 975px;
+  height: 273px;
+  display: flex;
+  gap: 50px;
+}
+.dPimg {
+  width: 283px;
+  height: 273px;
+}
+.dPname {
+  list-style: none;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 61px;
+  margin-top: 20px;
+}
+.dPname > li {
+}
+
+.pencil {
+  width: 22px;
+  height: 22px;
+}
+.dExpectPrice {
+  width: 416px;
+  /* height: 150px; */
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+#userPointArea {
+  margin-top: 10px;
+}
+.dEPtitle {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 60px;
+}
+.userPointMenu {
+  margin-left: 20px;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.userPointMenu div {
+  width: 270px;
+  margin-left: 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 37px;
+  cursor: pointer;
+}
+.dTop #userTitle {
+  display: inline-flex;
+  background-color: #ffc855;
+  border: 1px solid black;
+  border-radius: 25px;
+  height: 42px;
+  width: 220px;
+  text-align: center;
+  font-family: 'Jua';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 40px;
+  margin-right: 15px;
+  justify-content: space-around;
+}
+.dTop #userpName {
+  display: inline;
+  line-height: 70px;
+  padding-top: 20px;
+}
+#attendIcon {
+  width: 40px;
+  margin-right: 5px;
+}
+#gotchaIcon {
+  width: 45px;
+}
+#detailPointMenu {
+  width: 15px;
+  height: 30px;
+  margin-top: 2px;
+}
+.dContentTop {
+  width: 1590px;
+  height: 527px;
+  margin: 0 auto;
+  margin-top: 31px;
+  display: flex;
+  gap: 36px;
+}
+#dashboardProfileRight {
+  width: 500px;
+  margin-left: 100px;
+}
+.dCategoPrice {
+  width: 978px;
+  height: 527px;
+  border: 3px solid #e6e6e6;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+}
+.dCPtitle {
+  width: 200px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-left: 24px;
+}
+
+.dDailyPrice {
+  width: 576px;
+  height: 527px;
+  border: 3px solid #e6e6e6;
+  border-radius: 10px;
+}
+.dDPtitle {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-left: 24px;
+}
+.dContentMiddle {
+  width: 1590px;
+  height: 499px;
+  margin: 0 auto;
+  margin-top: 36px;
+  display: flex;
+  gap: 36px;
+}
+.dExpendPer {
+  width: 629px;
+  height: 499px;
+  border: 3px solid #e6e6e6;
+  border-radius: 10px;
+}
+.dExpendPertitle {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-left: 17px;
+}
+
+.dContentBottom {
+  width: 1590px;
+  height: 580px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+.dMonthlyExpend {
+  width: 1590px;
+  height: 580px;
+  border: 3px solid #e6e6e6;
+  border-radius: 10px;
+}
+.dMEtitel {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-left: 24px;
+}
+.dBottom {
+  width: 1590px;
+  height: 521px;
+  margin: 0 auto;
+  margin-top: 58px;
+  margin-bottom: 117px;
+}
+.dMItitle {
+  font-size: 28px;
+  font-weight: bold;
+}
+.dMontlyIssue {
+  width: 1590px;
+  height: 459px;
+  margin-top: 28px;
+  display: flex;
+  gap: 65px;
+}
+.dMIcontent {
+  width: 487px;
+  height: 459px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  box-shadow: 4px 5px 7px 0px gray;
+}
+.dMIheader {
+  width: 372px;
+  height: 256px;
+  margin: 0 auto;
+}
+.dMIheader > img {
+  width: 100%;
+  height: 100%;
+}
+.dMIbody {
+  width: 372px;
+  height: 71px;
+  margin: 0 auto;
+  margin-top: 12px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.dMIbtitle {
+  font-size: 15px;
+  font-weight: bold;
+  color: #9c52ff;
+}
+.dMIbsubtitle {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 11px;
+}
+.dMIfooter {
+  width: 293px;
+  height: 37px;
+  margin-left: 57px;
+  margin-top: 34px;
+}
+.dMIfcontent {
+  font-size: 12px;
+  font-weight: bold;
+  color: #9d9d9d;
+}
+.dCategoPrice {
+  position: relative;
+}
+.ExpendPerTitle {
+  font-size: 27px;
+  color: #d9d9d9;
+  margin-top: -6px;
+  margin-left: 202px;
+}
+.cateExpendsInfo {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  align-items: center;
+}
+
+.incomeModalContent {
+  position: fixed;
+  top: 254px;
+  right: 670px;
+  background-color: #fff;
+  width: 255px;
+  height: 35px;
+  border: 2px solid black;
+  border-radius: 5px;
+  z-index: 1000;
+}
+.budgetModalContent {
+  position: fixed;
+  top: 316px;
+  right: 596px;
+  background-color: #fff;
+  width: 255px;
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.dashModalContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.dashModal {
+  width: 235px;
+  height: 35px;
+  display: flex;
+  gap: 10px;
+}
+
+.incomeModal {
+}
+.dashModal > input {
+  width: 60%;
+  height: 100%;
+  border: none;
+  border-bottom: 3px solid #000;
+  padding-bottom: 5px;
+}
+.dashModal > button {
+  width: 40%;
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #000;
+  background-color: #efefef;
+  border-radius: 5px;
+  justify-content: center;
+}

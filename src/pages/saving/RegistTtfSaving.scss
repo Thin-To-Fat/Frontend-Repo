@@ -1,0 +1,281 @@
+#ttfRegistContent {
+  display: flex;
+  flex-direction: column;
+}
+.ttfInfoTemplate,
+#ttfInvestorTemplate {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#ttfInfoBody {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#ttfInfotitle {
+  /* TTF 신파일러적금 */
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 999;
+  line-height: 40px;
+
+  border-top: 1px solid #a0a0a0;
+  border-bottom: 1px solid #a0a0a0;
+  background-color: #f8f8f8;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+#ttfRegistContent .smallTitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 21px;
+
+  margin-bottom: 17px;
+  color: #0046ff;
+}
+.savingInfoMain .contentCK {
+  background-color: #ececec;
+  height: 50px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  input[type='checkbox'] {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-image: url(../../../public/images/savingUncheck.png);
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    appearance: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin: 0px 10px 0px 15px;
+  }
+  input[type='checkbox']:checked {
+    background-image: url(../../../public/images/savingChecked.png);
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+
+  label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 999;
+    font-size: 15px;
+    line-height: 21px;
+    display: inline-block;
+    width: 90%;
+  }
+  :nth-child(3) {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+  }
+}
+
+.savingInfoMain {
+  border-top: 1px solid black;
+}
+//첫번째 테이블
+.ttfInfoTemplate .contentInfo {
+  border-bottom: 1px solid #a0a0a0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 21px;
+
+  :nth-child(1) {
+    color: #0046ff;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  :nth-child(2) {
+    width: 82%;
+    margin-top: 15px;
+    
+    margin-bottom: 15px;
+  }
+  :nth-child(3) {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    
+    margin-bottom: 15px;
+  }
+}
+//두번쨰 테이블
+#ttfInvestorTemplate .contentInfo {
+  border-bottom: 1px solid #a0a0a0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+#ttfInvestorTemplate #infoTitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 21px;
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+  :nth-child(1) {
+    color: #0046ff;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  :nth-child(2) {
+    width: 82%;
+    margin-top: 15px;
+  }
+  :nth-child(3) {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+  }
+}
+#ttfInvestorTemplate #infoContent {
+  text-align: left;
+  width: 90%;
+  padding-right: 5px;
+  margin-bottom: 20px;
+}
+
+//세번째 테이블
+#ttfImportantTemplate .contentInfo {
+  border-bottom: 1px solid #a0a0a0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  .orangeContent {
+    color: #ff5f04;
+  }
+}
+#ttfImportantTemplate #infoTitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 21px;
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+  :nth-child(1) {
+    color: #0046ff;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  :nth-child(2) {
+    width: 82%;
+    margin-top: 15px;
+  }
+  :nth-child(3) {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+  }
+}
+#ttfImportantTemplate #infoContent {
+  text-align: left;
+  width: 90%;
+  padding-right: 5px;
+  margin-bottom: 15px;
+  ul {
+    padding-inline-start: 20px;
+    margin-block-start: 0em;
+  }
+  li {
+    line-height: 25px;
+  }
+}
+
+#moreDetailsInfo {
+  display: flex;
+  align-items: center;
+  line-height: 40px;
+  vertical-align: middle;
+
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+}
+
+#readingCheck .contentCK {
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-start;
+  line-height: 25px;
+  input[type='checkbox'] {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-image: url(../../../public/images/savingUncheck.png);
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    appearance: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin: 0px 10px 0px 0px;
+  }
+  input[type='checkbox']:checked {
+    background-image: url(../../../public/images/savingChecked.png);
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+  .orangeContent {
+    color: #ff5f04;
+  }
+}
+
+#ttfInfoCkButton {
+  margin: 50px 0px 50px 0px;
+
+  display: flex;
+  justify-content: center;
+  button {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 21px;
+  }
+  :nth-child(1) {
+    width: 100px;
+    height: 50px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    margin-right: 10px;
+  }
+  :nth-child(2) {
+    width: 100px;
+    height: 50px;
+    background-color: #0046ff;
+    border: none;
+    color: #ffffff;
+    margin-left: 10px;
+  }
+}
